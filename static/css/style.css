@@ -7,16 +7,7 @@
 /* General Styles in Body */
 body {
     min-height: 100vh;
-}
-
-#heading {
-  font-family: "Coiny", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 2px;
-  color: #db7f50;
+    background-color: #fef6f1;
 }
 
 /* Header */
@@ -24,12 +15,23 @@ header {
   background-color: #fef6f1;
   padding: 0;
   position: fixed;
+  top: 0;
   z-index: 99;
   width: 100%;
   height: 120px;
   display: flex;
   justify-content: center;
   align-items: flex-end;
+}
+
+.heading {
+  font-family: "Coiny", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #db7f50;
 }
 
 header a {
@@ -50,10 +52,6 @@ header a {
 .modal {
   background-color: #F8E2D6;
   color: #E18F54;
-  /* display: flex; */
-  /* padding: 0;
-  justify-content: center;
-  align-items: center; */
 }
 
 .close {
@@ -92,3 +90,14 @@ header a {
   color: #fef6f1;
 }
 
+.home {
+  margin-top: 200px;
+}
+
+#landing-image {
+  background-image: url("{% static 'images/baix-ebre.jpg' %}");
+}
+
+#image-links > a {
+  text-decoration: none;
+}
