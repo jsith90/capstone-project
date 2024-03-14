@@ -2,16 +2,17 @@
 {% load static %}
 {% block content %}
 <main class="home">
-    <section id="landing-image">
+    <section id="image-box">
+        <img id="landing-image" src="{% static 'images/baix-ebre.jpg' %}" alt="">
         <div id="image-title">
-            <h2>The Catalan-Cymru Connection</h2>
+            <h2><span class="content1">The Catalan-Cymru</span> <span class="content2">Connection</span></h2>
         </div>
-        <div class="image-text">
-            <p>Bringing the delights of the Baix Ebre to South Wales</p>
+        <div id="image-text">
+            <p><span class="content1">Bringing the culinary delights of the Baix Ebre to</span> <span class="content2">South Wales</span></p>
         </div>
         <div id="image-links">
             <a href="">DISCOVER MORE</a>
-            <a href="">BOOK A TABLE!</a>
+            <a href="{% url 'table_booking' %}">BOOK A TABLE!</a>
         </div>
     </section>
 </main>

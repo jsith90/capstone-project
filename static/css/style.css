@@ -8,6 +8,9 @@
 body {
     min-height: 100vh;
     background-color: #fef6f1;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    color: #db7f50; 
 }
 
 /* Header */
@@ -20,8 +23,9 @@ header {
   width: 100%;
   height: 120px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .heading {
@@ -32,6 +36,25 @@ header {
   text-align: center;
   letter-spacing: 2px;
   color: #db7f50;
+}
+
+#banner {
+  display: flex;
+  height: 20%;
+  width: 100%;
+  background-color: #E6A057;
+  justify-content: center;
+  align-content: center;
+}
+
+#banner > h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 12px;
+  margin-top: 3px;
+  color: #fef6f1;
+  letter-spacing: 2px;
 }
 
 header a {
@@ -91,13 +114,82 @@ header a {
 }
 
 .home {
-  margin-top: 200px;
+  margin-top: 125px;
+  display: flex;
+  justify-content: center;
+}
+
+#image-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #landing-image {
-  background-image: url("{% static 'images/baix-ebre.jpg' %}");
+  width: 95%;
+  height: 70%;
+  border-radius: 25px;
+  overflow: hidden;
+  min-height: 60vh;
+}
+
+#image-title {
+  font-family: "Coiny", sans-serif;
+  text-align: center;
+  position: absolute;
+  top: 215px;
+}
+
+#image-title > h2 {
+  font-size: calc(1.325rem + .9vw);
+  color:#fef6f1;
+}
+
+#image-text {
+  position: absolute;
+  top: 275px;
+  width: 80%;
+}
+
+#image-text > p {
+  color:#fef6f1;
+  text-align: center;
+  font-weight: 800;
+  font-size: 12px;
+}
+
+#image-links {
+  position: absolute;
+  top: 310px;
+  font-size: 12px;
+  text-align: center;
 }
 
 #image-links > a {
   text-decoration: none;
+  color: #fef6f1;
+  margin: 15px;
+  border-bottom: solid 1px #fef6f1;
+}
+
+/* Large mobile devices (portrait large phones, 400px and up) */
+@media only screen and (min-width: 400px) {
+  .content1::after{
+    content: "\a";
+    white-space: pre;
+  }
+
+  #image-title {
+    top: 245px;
+  }
+
+  #image-text {
+    top: 310px;
+  }
+
+  #image-links {
+    top: 350px;
+  }
+  
 }
