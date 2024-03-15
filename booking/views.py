@@ -31,7 +31,8 @@ def table_booking_submit(request):
         "1 PM", "3 PM", "5 PM", "7 PM", "9 PM"
     ]
     today = datetime.now()
-    min_date = today.strftime('%Y-%m-%d')
+    tomorrow = today + timedelta(days=1)
+    min_date = tomorrow.strftime('%Y-%m-%d')
     deltatime = today + timedelta(days=21)
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     max_date = strdeltatime
@@ -92,7 +93,8 @@ def user_update(request, id):
     table_booking = Table_Booking.objects.get(pk=id)
     user_date_selected = table_booking.day
     today = datetime.today()
-    min_date = today.strftime('%Y-%m-%d')
+    tomorrow = today + timedelta(days=1)
+    min_date = tomorrow.strftime('%Y-%m-%d')
     delta24 = (user_date_selected).strftime('%Y-%m-%d') >= (today + timedelta(days=1)).strftime('%Y-%m-%d')
     days_open = valid_day(22)
     validate_days = is_day_valid(days_open)
@@ -119,7 +121,8 @@ def user_update_submit(request, id):
         "1 PM", "3 PM", "5 PM", "7 PM", "9 PM"
     ]
     today = datetime.now()
-    min_date = today.strftime('%Y-%m-%d')
+    tomorrow = today + timedelta(days=1)
+    min_date = tomorrow.strftime('%Y-%m-%d')
     deltatime = today + timedelta(days=21)
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     max_date = strdeltatime
@@ -181,9 +184,10 @@ def day_to_day_open(x):
 
 def valid_day(days):
     today = datetime.now()
+    tomorrow = today + timedelta(days=1)
     valid_days = []
     for i in range (0, days):
-        x = today + timedelta(days=i)
+        x = tomorrow + timedelta(days=i)
         y = x.strftime('%A')
         if y == 'Thursday' or y == 'Friday' or y == 'Saturday' or y == 'Sunday':
             valid_days.append(x.strftime('%Y-%m-%d'))
@@ -218,8 +222,9 @@ def delete_booking(request, booking_id):
     table_booking = Table_Booking.objects.get(pk=booking_id)
     if request.user.is_authenticated:
         today = datetime.today()
+        tomorrow = today + timedelta(days=1)
         booking_date = table_booking.day
-        min_deletion_date = today + timedelta(days=1)
+        min_deletion_date = tomorrow + timedelta(days=1)
         if booking_date >= min_deletion_date.date():
             table_booking.delete()
             messages.success(request, ("Booking successfully cancelled!"))

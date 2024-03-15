@@ -114,7 +114,7 @@ header a {
 }
 
 .home {
-  margin-top: 125px;
+  margin-top: 110px;
   display: flex;
   justify-content: center;
 }
@@ -263,6 +263,11 @@ header a {
 
 /* Large mobile devices (portrait large phones, 400px and up) */
 @media only screen and (min-width: 400px) {
+
+  .home {
+    margin-top: 100px;
+  }
+
   .content1::after{
     content: "\a";
     white-space: pre;

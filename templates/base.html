@@ -40,17 +40,6 @@
     </div>
     <div id="banner"><h4>🥘 vegetarian tapas to be proud of  🥘</h4></div>
   </header>
-    <div>
-      <!--Messages-->
-      {% if messages %}
-      {% for message in messages %}
-          <div class="alert alert-success  alert-dismissible fade show text-center " role="alert">
-              <h3 class="display-3">{{ message }}</h3>
-          </div>
-      {% endfor %}
-      {% endif %}
-    </div>
-      <!--Messages End-->
     {% block content %}
     {% endblock %}
     <script src="https://kit.fontawesome.com/ff8e893dec.js" crossorigin="anonymous"></script>
