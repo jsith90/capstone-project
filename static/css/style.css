@@ -321,6 +321,123 @@ header a {
   align-self: center;
 }
 
+#time-button:hover {
+  margin-top: 10px;
+  background-color: #E6A057;
+  color: white;
+  border: 3px solid white;
+}
+
+#hero-register {
+    margin-top: 100px;
+    width: 100%;
+}
+  
+#register-image {
+  width: 100%;
+}
+
+#register-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  padding: 50px;
+}
+
+#register-heading {
+  text-align: center;
+  font-family: 'Coiny', sans-serif;
+  font-weight: 500;
+  color:#db7f50;
+}
+
+.line-break {
+  width: 100%;
+}
+
+#register-form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#register-form > p {
+  margin-bottom: 30px;
+}
+
+#register-button {
+  background-color: white;
+  color: #E6A057;
+  border: 3px solid #E6A057;
+  font-family: 'Coiny';
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  align-self: center;
+}
+
+#register-button:hover {
+  margin-top: 10px;
+  background-color: #E6A057;
+  color: white;
+  border: 3px solid white;
+}
+
+#hero-login {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#login-image {
+width: 100%;
+}
+
+#login-main {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top: 10px;
+padding: 50px;
+}
+
+#login-heading {
+text-align: center;
+font-family: 'Coiny', sans-serif;
+font-weight: 500;
+color:#db7f50;
+}
+
+#login-form{
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+#login-form > p {
+margin-bottom: 30px;
+}
+
+#login-button {
+background-color: white;
+color: #E6A057;
+border: 3px solid #E6A057;
+font-family: 'Coiny';
+text-align: center;
+border-radius: 5px;
+padding: 5px;
+align-self: center;
+}
+
+#login-button:hover {
+margin-top: 10px;
+background-color: #E6A057;
+color: white;
+border: 3px solid white;
+}
+
 /* Large mobile devices (portrait large phones, 400px and up) */
 @media only screen and (min-width: 400px) {
 

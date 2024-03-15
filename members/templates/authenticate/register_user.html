@@ -1,20 +1,20 @@
+<title>Sign-Up</title>
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% if form.errors %}
-	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <strong>There was an error with your form...</strong>
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-{% endif %}
-	<h1>Register</h1>
-	<br><br>
-	<form action="{% url 'register_user' %}" method=POST>
-	{% csrf_token %}
-		{{ form.as_p }}
-		<br><br>
-		<input type="submit" value="Submit" class="btn btn-secondary">
-	</form>
-	<br><br>	
-	
+	<main id="register">
+		<section id="hero-register">
+			<img id="register-image" src="{% static 'images/register.jpg' %}" alt="Blurred image of Spanish buildings">
+		</section>
+		<section id="register-main">
+			<h1 id="register-heading">Create a Profile</h1>
+			<hr class="line-break">
+			<form action="{% url 'register_user' %}" method=POST id="register-form">
+			{% csrf_token %}
+				{{ form.as_p }}
+				<hr>
+				<input type="submit" value="Submit" id="register-button">
+			</form>
+		</section>
+	</main>	
 {% endblock %}
