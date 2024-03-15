@@ -213,7 +213,7 @@ header a {
   align-items: center;
 }
 
-#form-input {
+.form-input {
   width: 90%;
   padding: 60px;
   background-color:#fef6f1;
@@ -221,6 +221,12 @@ header a {
   display: flex;
   justify-content: center;
   text-align: center;
+}
+
+.center-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .table-title {
@@ -259,6 +265,60 @@ header a {
   background-color: #E6A057;
   color: white;
   border: 3px solid white;
+}
+
+#time-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#hero-time {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#time-image {
+  width: 100%;
+}
+
+#time-heading {
+  text-align: center;
+  font-family: 'Coiny', sans-serif;
+  font-weight: 500;
+  color:#db7f50;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+#time-background {
+  margin-top: 0;
+  padding-bottom: 100px;
+  align-self: center;
+  background-color: #FBE4D6;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#time-select {
+  background-color: #fef6f1;
+  font-family: 'Montserrat', sans-serif;
+  color: #db7f50;
+}
+
+#time-button {
+  margin-top: 30px;
+  background-color: white;
+  color: #E6A057;
+  border: 3px solid #E6A057;
+  font-family: 'Coiny';
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  align-self: center;
 }
 
 /* Large mobile devices (portrait large phones, 400px and up) */

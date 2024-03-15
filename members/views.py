@@ -24,7 +24,7 @@ def login_user(request):
 
 def logout_user(request):
 	logout(request)
-	messages.success(request, ("You were logged out!"))
+	messages.success(request, ("You logged out!"))
 	return redirect('index')
 
 def register_user(request):
@@ -44,21 +44,25 @@ def register_user(request):
 		'form':form,
 		})
 
-@login_required
 def details_update(request, id):
 	user = User.objects.get(pk=id)
-	if request.user == user:
-		if request.method == 'POST':
-			form = UserUpdateForm(request.POST, instance=user)
-			if form.is_valid():
-				form.save()
-				messages.success(request, "User details updated successfully.")
-				return redirect('user_panel')
+	if request.user.is_authenticated:	
+		if request.user == user:
+			if request.method == 'POST':
+				form = UserUpdateForm(request.POST, instance=user)
+				if form.is_valid():
+					form.save()
+					messages.success(request, "User details updated successfully.")
+					return redirect('user_panel')
+			else:
+				form = UserUpdateForm(instance=user)
+			return render(request, 'authenticate/details_update.html', {'form': form})
 		else:
-			form = UserUpdateForm(instance=user)
-		return render(request, 'authenticate/details_update.html', {'form': form})
+			messages.success(request, 'You are not authorised to do that.')
+			return render(request, 'booking/index.html')
 	else:
-		return render(request, 'booking/index.html')
+		messages.success(request, 'Please log-in to make changes to your profile.')
+		return redirect('login_user')
 
 def password_update(request):
 	if request.method == 'POST':

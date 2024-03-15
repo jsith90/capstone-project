@@ -8,8 +8,8 @@
 </section>
 <section id="form-background">
 <h2 id="booking-heading">Table Booking</h2>
-<div id="form-input">
-    <form method="post" action="{% url 'table_booking' %}" class="me-2 ms-2" required>
+<div class="form-input">
+    <form method="post" action="{% url 'table_booking' %}" class="center-form" required>
         {% csrf_token %}
         <div>
             <h3 class="table-title">Select Your Table:</h3>
