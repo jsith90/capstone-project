@@ -37,7 +37,7 @@
       		<!--Messages-->
       		{% if messages %}
       		{% for message in messages %}
-          	<div class="alert alert-success  alert-dismissible fade show text-center " role="alert">
+          	<div role="alert">
 		          <p onclick="document.getElementById('messageModal').style.display='none'" class="close active">X CLOSE</p>
               <h3 class="display-3">{{ message }}</h3>
           	</div>
@@ -48,7 +48,7 @@
     <hr>
     <div class="heading active">
         <a href="{% url 'index' %}">
-            <h1 id="cucafera">la cucafera</h1>
+            <h1>la cucafera</h1>
         </a>
     </div>
     <div id="banner"><h4>🥘 vegetarian tapas to be proud of  🥘</h4></div>

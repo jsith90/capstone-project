@@ -245,15 +245,15 @@ def delete_booking(request, booking_id):
     if request.user.is_authenticated:
         if request.user == table_booking.user:
             today = datetime.today()
-            tomorrow = today + timedelta(days=1)
             booking_date = table_booking.day
-            min_deletion_date = tomorrow + timedelta(days=1)
+            min_deletion_date = today + timedelta(days=1)
             if booking_date >= min_deletion_date.date():
                 table_booking.delete()
                 messages.success(request, ("Booking successfully cancelled!"))
                 return redirect ('user_panel')
             else:
                 messages.success(request, "You cannot delete this booking as it is less than 24 hours ahead of the booking time.")
+                return redirect ('user_panel')
         else:
             messages.success(request, ("You aren't authorised to do that!"))
             return redirect('user_panel')

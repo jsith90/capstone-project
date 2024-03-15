@@ -88,6 +88,14 @@ header a {
   border-radius: 5px;
   padding: 3px;
   width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.close:hover {
+  background-color:#E18F54;
+  color: #F8E2D6;
+  border: 3px solid #F8E2D6;
 }
 
 #members-menu {
@@ -117,6 +125,7 @@ header a {
   margin-top: 110px;
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 #image-box {
@@ -436,6 +445,163 @@ margin-top: 10px;
 background-color: #E6A057;
 color: white;
 border: 3px solid white;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #db7f50;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 20px;
+}
+
+.footing {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-family: "Coiny", sans-serif;
+  font-weight: 900; 
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  color:#fef6f1;
+}
+
+.footing > h1 {
+  margin-bottom: 0;
+}
+
+.footer-break {
+  width: 60%;
+  color:#fef6f1;
+  text-align: center;
+}
+
+.contact > h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 20px; 
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  color:#fef6f1;
+}
+
+.contact > p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px; 
+  font-style: normal;
+  text-align: center;
+  letter-spacing: 2px;
+  color:#fef6f1;
+  margin: 5px;
+}
+
+.times > h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 20px; 
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  color:#fef6f1;
+}
+
+.times > p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15px; 
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  color:#fef6f1;
+  margin: 5px;
+}
+
+#messageModal {
+  background-color: #F8E2D6;
+  color: #E18F54;
+}
+
+#messages {
+  position: relative;
+  top: 70px;
+  margin-right: 40px;
+  font-family: "Coiny", sans-serif;
+  font-weight: 800;
+  font-style: ExtraBold;
+  font-size: 150%;
+  letter-spacing: 2px;
+  list-style-type: none;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.id02 {
+  background-color: #F8E2D6;
+  color: #E18F54;
+  display: flex;
+  flex-direction: column;
+}
+
+.id01 {
+  background-color: #F8E2D6;
+  color: #E18F54;
+  display: flex;
+  flex-direction: column;
+}
+
+.crud {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+}
+
+.container {
+  position: relative;
+  top: 70px;
+  margin-right: 40px;
+  font-family: "Coiny", sans-serif;
+  font-weight: 500;
+  font-style: ExtraBold;
+  font-size: 20px;
+  letter-spacing: 2px;
+  list-style-type: none;
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.cancelbtn {
+  background-color: white;
+  color: green;
+  border: 3px solid green;
+  font-family: 'Coiny';
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.deletebtn {
+  background-color: white;
+  color: red;
+  border: 0.2rem solid red;
+  font-family: 'Coiny';
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  align-self: cen
+}
+
+.modal-content {
+  background-color: #fef6f1;
+  border: none;
 }
 
 /* Large mobile devices (portrait large phones, 400px and up) */

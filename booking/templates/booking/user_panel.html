@@ -31,7 +31,8 @@
                     <div class="card-footer text-body-secondary">
                         <button onclick="document.getElementById('id02').style.display='block'" class="btn btn-outline-danger btn-sm">Edit Booking</button>
                         <div id="id02" class="modal">
-                            <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">X</span>
+                          <div class="id02">
+                            <span onclick="document.getElementById('id02').style.display='none'" class="close crud" title="Close Modal">Close X</span>
                             <form class="modal-content" action="/action_page.php">
                               <div class="container">
                                 <h1>Edit Booking</h1>
@@ -43,11 +44,13 @@
                               </div>
                             </form>
                           </div>
+                        </div>
                     </div>
                     <div class="card-footer text-body-secondary">
                         <button onclick="document.getElementById('id01').style.display='block'" class="btn btn-outline-danger btn-sm">Cancel Booking</button>
                         <div id="id01" class="modal">
-                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
+                          <div class="id01">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close crud" title="Close Modal">Close X</span>
                             <form class="modal-content" action="/action_page.php">
                               <div class="container">
                                 <h1>Cancel Booking</h1>
@@ -59,6 +62,7 @@
                               </div>
                             </form>
                           </div>
+                        </div>
                     </div>
                 </div>
                   {% endif %}
