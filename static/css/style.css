@@ -121,14 +121,32 @@ header a {
   color: #fef6f1;
 }
 
-.home {
+/* .home {
   margin-top: 110px;
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
+} */
+
+.home {
+  margin-top: 450px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
+/* #image-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+} */
+
 #image-box {
+  position:absolute;
+  top: 120px;
+  height: 60%;
+  width: 95%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -141,13 +159,21 @@ header a {
   border-radius: 25px;
   overflow: hidden;
   min-height: 60vh;
+  position: absolute;
 }
+
+/* #image-title {
+  font-family: "Coiny", sans-serif;
+  text-align: center;
+  position: absolute;
+  top: 215px;
+} */
 
 #image-title {
   font-family: "Coiny", sans-serif;
   text-align: center;
   position: absolute;
-  top: 215px;
+  top: 45px;
 }
 
 #image-title > h2 {
@@ -155,9 +181,15 @@ header a {
   color:#fef6f1;
 }
 
-#image-text {
+/* #image-text {
   position: absolute;
   top: 275px;
+  width: 80%;
+} */
+
+#image-text {
+  position: absolute;
+  top: 110px;
   width: 80%;
 }
 
@@ -168,9 +200,16 @@ header a {
   font-size: 12px;
 }
 
-#image-links {
+/* #image-links {
   position: absolute;
   top: 310px;
+  font-size: 12px;
+  text-align: center;
+} */
+
+#image-links {
+  position: absolute;
+  top: 160px;
   font-size: 12px;
   text-align: center;
 }
@@ -211,7 +250,7 @@ header a {
 }
 
 #form-background {
-  margin-top: 0;
+  margin-top: 100px;
   padding-bottom: 100px;
   align-self: center;
   background-color: #FBE4D6;
@@ -301,7 +340,7 @@ header a {
 }
 
 #time-background {
-  margin-top: 0;
+  margin-top: 100px;
   padding-bottom: 100px;
   align-self: center;
   background-color: #FBE4D6;
@@ -447,6 +486,17 @@ color: white;
 border: 3px solid white;
 }
 
+/* footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #db7f50;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50px;
+} */
+
 footer {
   display: flex;
   flex-direction: column;
@@ -456,6 +506,9 @@ footer {
   width: 100%;
   height: 100%;
   padding-bottom: 50px;
+  position: relative;
+  bottom: -200px;
+  /* margin-top: 450px; */
 }
 
 .footing {
@@ -604,28 +657,79 @@ footer {
   border: none;
 }
 
+#user-bookings {
+    margin-top: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#info-title {
+  text-align: center;
+  font-family: 'Coiny', sans-serif;
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+
+#details-list {
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+}
+
+#user-info {
+  font-family: 'Montserrat', sans-serif;
+  color: #db7f50;
+  font-weight: 700;
+}
+
+#bookings-heading {
+  font-family: "Coiny", sans-serif;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #db7f50;
+}
+
+#buttons {
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.details-update {
+  text-decoration: none;
+  background-color: white;
+  color:#db7f50;
+  border: 3px solid #db7f50;
+  font-family: 'Coiny';
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 5px;
+}
+
 /* Large mobile devices (portrait large phones, 400px and up) */
 @media only screen and (min-width: 400px) {
-
-  .home {
-    margin-top: 100px;
-  }
 
   .content1::after{
     content: "\a";
     white-space: pre;
   }
 
-  #image-title {
-    top: 245px;
+  /* #image-title {
+    top: 180px;
   }
 
   #image-text {
-    top: 310px;
+    top: 250px;
   }
 
   #image-links {
-    top: 350px;
-  }
+    top: 300px;
+  } */
   
 }
