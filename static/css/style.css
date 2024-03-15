@@ -137,18 +137,16 @@ header a {
 
 #landing-image {
   width: 95%;
-  height: 70%;
   border-radius: 25px;
   overflow: hidden;
   min-height: 60vh;
-  position: absolute;
 }
 
 #image-title {
   font-family: "Coiny", sans-serif;
   text-align: center;
   position: absolute;
-  top: 215px;
+  top: 150px;
 }
 
 #image-title > h2 {
@@ -158,7 +156,7 @@ header a {
 
 #image-text {
   position: absolute;
-  top: 275px;
+  top: 215px;
   width: 80%;
 }
 
@@ -171,7 +169,7 @@ header a {
 
 #image-links {
   position: absolute;
-  top: 310px;
+  top: 260px;
   font-size: 12px;
   text-align: center;
 }
@@ -179,7 +177,7 @@ header a {
 #image-links > a {
   text-decoration: none;
   color: #fef6f1;
-  margin: 15px;
+  margin: 10px;
   border-bottom: solid 1px #fef6f1;
 }
 
@@ -212,7 +210,6 @@ header a {
 }
 
 #form-background {
-  margin-top: 100px;
   padding-bottom: 100px;
   align-self: center;
   background-color: #FBE4D6;
@@ -302,7 +299,6 @@ header a {
 }
 
 #time-background {
-  margin-top: 100px;
   padding-bottom: 100px;
   align-self: center;
   background-color: #FBE4D6;
