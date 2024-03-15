@@ -8,6 +8,7 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request, "booking/index.html",{})
 
+@login_required
 def table_booking(request):
     days_open = valid_day(22)
     validate_days = is_day_valid(days_open)
@@ -25,6 +26,7 @@ def table_booking(request):
             'validate_days':validate_days,
         })
 
+@login_required
 def table_booking_submit(request):
     user = request.user
     times = [
@@ -89,6 +91,7 @@ def user_panel(request):
         'today': today,
     })
 
+@login_required
 def user_update(request, id):
     table_booking = Table_Booking.objects.get(pk=id)
     user_date_selected = table_booking.day
@@ -115,6 +118,7 @@ def user_update(request, id):
             'id': id,
         })
 
+@login_required
 def user_update_submit(request, id):
     user = request.user
     times = [
@@ -165,18 +169,23 @@ def user_update_submit(request, id):
         })
     else:
         return render(request, 'booking/index.html')
-        
+
+@login_required        
 def staff_panel(request):
+    user = request.user
     today = datetime.today()
     min_date = today.strftime('%Y-%m-%d')
     deltatime = today + timedelta(days=21)
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     max_date = strdeltatime
-    items = Table_Booking.objects.filter(day__range=[min_date, max_date]).order_by('day', 'time')
-    return render(request, 'booking/staff_panel.html', {
-        'items':items,
-    })
-
+    if user.is_authenticated and user.is_superuser:
+        items = Table_Booking.objects.filter(day__range=[min_date, max_date]).order_by('day', 'time')
+        return render(request, 'booking/staff_panel.html', {
+            'items':items,
+        })
+    else:
+        messages.success(request, "You are not authorised to view that page.")
+        return redirect('index')
 def day_to_day_open(x):
     z = datetime.strptime(x, "%Y-%m-%d")
     y = z.strftime('%A')

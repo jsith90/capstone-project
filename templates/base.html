@@ -14,10 +14,10 @@
 <body>
   <header>
     <div class="members">
-      <i onclick="document.getElementById('id01').style.display='block'" class="active fa-regular fa-circle-user"></i>
-      <nav id="id01" class="modal">
+      <i onclick="document.getElementById('nav-links').style.display='block'" class="active fa-regular fa-circle-user"></i>
+      <nav id="nav-links" class="modal">
           <ul id="members-menu">
-              <li onclick="document.getElementById('id01').style.display='none'" class="close active">X CLOSE</li>
+              <li onclick="document.getElementById('nav-links').style.display='none'" class="close active">X CLOSE</li>
               {% if user.is_authenticated %}
               <li><a href="{% url 'table_booking' %}" class="active">Book a Table</a></li>
               <li><a class="active" href="{% url 'user_panel' %}">Your Bookings</a></li>
@@ -32,6 +32,19 @@
           </ul>
       </nav>
     </div>
+    <nav id="messageModal" class="modal">
+	    <div id="messages">
+      		<!--Messages-->
+      		{% if messages %}
+      		{% for message in messages %}
+          	<div class="alert alert-success  alert-dismissible fade show text-center " role="alert">
+		          <p onclick="document.getElementById('messageModal').style.display='none'" class="close active">X CLOSE</p>
+              <h3 class="display-3">{{ message }}</h3>
+          	</div>
+      		{% endfor %}
+      		{% endif %}
+    	</div>
+    </nav>
     <hr>
     <div class="heading active">
         <a href="{% url 'index' %}">
