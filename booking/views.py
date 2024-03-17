@@ -8,6 +8,9 @@ from django.contrib.auth.models import User
 def index(request):
     return render(request, "booking/index.html",{})
 
+def menu(request):
+    return render(request, "booking/menu.html",{})
+
 def table_booking(request):
     user = request.user
     days_open = valid_day(22)
@@ -260,3 +263,4 @@ def delete_booking(request, booking_id):
     else:
         messages.success(request, ("Please log-in to delete your bookings"))
         return redirect('index')
+

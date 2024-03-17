@@ -1,85 +1,100 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<main>
-    <section class="menu-heading">
-      <header class="menu-header">
+<main id="menu-main">
+  <section id="img-box">
+    <img id="menu-image" src="{% static 'images/menu-image.jpg' %}" alt="">
+  </section>
+    <section id="menu-heading">
         <h1 class="menu-title">OUR MENU</h1>
-        <p class="hero-menu"><span>La Cucafera</span> <span>Vegetarian Tapas Bar Menu</span> <span>Baix Ebre Inspired and Ingredients Sourced Tapas and Beverages.</span>
+        <img class="menu-emoji" src="{% static 'images/menu.png' %}" alt="knife and fork and plate emoji">
+        <p class="hero-menu">La Cucafera Vegetarian Tapas Bar Menu.<br>Baix Ebre Inspired Tapas and Beverages.
         </p>
-      </header>
     </section>
-    La Cucafera Vegetarian Tapas Bar Menu
-Baix Ebre Region Inspired Tapas
-    <section>
-        <hr>
-        <h2>Catalan Tapas</h2>
-        <h3>1. Pa amb Tomàquet... 2.5</h3>
+    <article>
+    <hr>
+    <section class="menu-list">
+        <h2 class="sub-heading">Catalan Tapas <img class="menu-emoji" src="{% static 'images/catalan-flag.png' %}" alt="catalan-flag"></h2>
+        <h3 class="menu-item">Pa amb Tomàquet... 2.5</h3>
         <p>Traditional Catalan dish of toasted bread rubbed with garlic and ripe tomatoes, drizzled with extra virgin olive oil and sprinkled with sea salt.</p>
-        <h3>2. Escalivada... 3.5</h3>
-        <p>Grilled vegetables (such as eggplant, bell peppers, and onions) served with a tangy romesco sauce.</p>
-        <h3>3. Patates Braves... 3.5</h3>
+        <h3 class="menu-item">Escalivada... 3.5</h3>
+        <p>Grilled vegetables (such as aubergine, bell peppers, and onions) served with a tangy romesco sauce.</p>
+        <h3 class="menu-item">Patates Braves... 3.5</h3>
         <p>Crispy fried potatoes served with a spicy tomato sauce and garlic aioli.</p>
-        <h3>4. Bunyols de Formatge...4.5</h3>
+        <h3 class="menu-item">Bunyols de Formatge...4.5</h3>
         <p>Cheese fritters seasoned with herbs and served with a tangy tomato dipping sauce.</p>
-        <h3>5. Tofu a la Catalana...4.5</h3>
+        <h3 class="menu-item">Tofu a la Catalana...4.5</h3>
         <p>Tofu marinated in Catalan spices, served with roasted vegetables and a drizzle of balsamic glaze.</p>
-        <h3>6. Cigrons Amb Espinacs...4.5</h3>
+        <h3 class="menu-item">Cigrons Amb Espinacs...4.5</h3>
         <p>Chickpeas cooked with spinach, garlic, and smoked paprika</p>
-        <h3>7. Coca de Verduras...4.5</h3>
+        <h3 class="menu-item">Coca de Verduras...4.5</h3>
         <p>Catalan flatbread topped with roasted vegetables, caramelized onions, and melted cheese.</p>
-        <h3>8. Patates a la Importància...4.5</h3>
+        <h3 class="menu-item">Patates a la Importància...4.5</h3>
         <p>Potatoes cooked in a flavorful vegetable broth with saffron and served with a garlic and almond sauce.</p>
-        <h3>9. Calçots Amb Romesco...3.5</h3>
+        <h3 class="menu-item">Calçots Amb Romesco...3.5</h3>
         <p>Grilled spring onions served with romesco sauce, a classic Catalan dip made from roasted red peppers, almonds, and garlic.</p>
-        <h3>10. Espinacs Saltats...3.5</h3>
+        <h3 class="menu-item">Espinacs Saltats...3.5</h3>
         <p>Sautéed spinach with pine nuts, raisins, and a touch of garlic.</p>
-        <h3>11. Truita de Patates...4.5</h3>
+        <h3 class="menu-item">Truita de Patates...4.5</h3>
         <p>Traditional Spanish potato omelet served with aioli.</p>
         <hr>
-        <h2>Welsh Tapas</h2>
-        <h2>Glamorgan Sausages...5.5</h2>
-        <p>Traditional Welsh sausages - a Welsh croquette if you will - made from cheese, leeks, and breadcrumbs, served with a tangy tomato dipping sauce.></p>
-        <h2>Welsh Rarebit Croquettes...4.5</h2>
+        <h2 class="sub-heading">Welsh Tapas <img class="menu-emoji" src="{% static 'images/welsh-flag.png' %}" alt="welsh-flag"></h2>
+        <h3 class="menu-item">Glamorgan Sausages...5.5</h3>
+        <p>Traditional Welsh sausages - a Welsh croquette if you will - made from cheese, leeks, and breadcrumbs, served with a tangy tomato dipping sauce.</p>
+        <h3 class="menu-item">Welsh Rarebit Croquettes...4.5</h3>
         <p>Crispy croquettes filled with a rich Welsh rarebit mixture made from cheese, ale, and mustard.</p>
-        <h2>Laverbread Fritters...3.5</h2>
+        <h3 class="menu-item">Laverbread Fritters...3.5</h3>
         <p>Deep-fried fritters made from laverbread (edible seaweed), served with a lemon wedge and garlic aioli.</p>
         <hr>
-        <h2>Postres</h2>
-        <h3>Crema Catalana...4.5</h3>
+        <h2 class="sub-heading">Postres <img class="menu-emoji" src="{% static 'images/dessert.png' %}" alt=""></h2>
+        <h3 class="menu-item">Crema Catalana...4.5</h3>
         <p>Classic Catalan dessert of creamy custard topped with caramelized sugar.</p>
-        <h3>C.R.E.O. Xocolata A La Taza...4.5</h3>
-        <p>A thick chocolate drink from the Baix Ebre region made with cocoa beans from Majorca.</p>
-        <h3>Welsh Cakes...2.5</h3>
+        <h3 class="menu-item">C.R.E.O. Xocolata A La Taza w/Churros...6.5</h3>
+        <p>A thick chocolate drink from the Baix Ebre region made with cocoa beans from Majorca and served with churros.</p>
+        <h3 class="menu-item">Welsh Cakes...2.5</h3>
         <p>Traditional Welsh griddle cakes made with flour, olive oil, sugar, and currants, served warm with a dusting of powdered sugar.</p>
-        <h3>Bara Brith...3.5</h3>
+        <h3 class="menu-item">Bara Brith...5.5</h3>
         <p>A traditional Welsh fruit loaf made with dried fruits, spices, and tea, served sliced with cheddar cheese.</p>
     </section>
-    <section>
-        <h2>Beverages</h2>
-        <h3>Alcohol</h3>
-        <p>Sangria (Red or White)...[g/3.5][b/9.5]</p>
-        <p>Cava (Spanish Sparkling Wine)...[g/4.5][b/15.5</p>
-        <p>Vermouth (From the home of Vermouth - Reus)...[g/4.5][b/12.5]</p>
-        <p>A range of Red or White Terra Alta Wines, ask our staff for more details</p>
-        <h3>Cervese Moritz</h3>
-        <p>Served on tap, ask for a caña (small)...2.5 or doble (large)...4.5</p>
-        <h3>Non-Alcoholic</h3>
-        <p>Freshly squeezed juices, ask our staff for more details...4.5</p>
-        <p>Vichy Catalan Sodas, ask our staff for more details on a range of flavoured fizzy drinks...3.5</p>
-        <h3>Hot Drinks</h3>
-        <h2>Cafe con Leche...2.6</h2>
+    <hr>
+    <section class="menu-list">
+        <h2 class="sub-heading">Alcohol <img class="menu-emoji" src="{% static 'images/alcohol.png' %}" alt="wine-glass"></h2>
+        <h3 class="menu-item">Sangria (Red or White)...[g/3.5][b/9.5]</h3><br>
+        <h3 class="menu-item">Cava (Spanish Sparkling Wine)...[g/4.5][b/15.5</h3><br>
+        <h3 class="menu-item">Vermouth...[g/4.5][b/12.5]</h3>
+        <p>From the home of Vermouth - Reus</p>
+        <h3 class="menu-item">Red or White Terra Alta Wines...[g/4][b/18]</h3>
+        <p>Choose from a selection of red and white wines from the Baix Ebre mountains</p>
+        <h3 class="menu-item">Cervese Moritz...[c/2.5][d/4.5]</h3>
+        <p>Served on tap, ask for a caña (small) or doble (large)</p>
+        <hr>
+        <h2 class="sub-heading">Soft Drinks <img class="menu-emoji" src="{% static 'images/soft-drink.png' %}" alt="soft-drink"></h2>
+        <h3 class="menu-item">Freshly squeezed juices...4.5</h3>
+        <p>Ask our staff for more details</p>
+        <h3 class="menu-item">Vichy Catalan Sodas...3.5</h3>
+        <p>Ask our staff for more details on a range of flavoured fizzy drinks</p>
+        <hr>
+        <h2 class="sub-heading">Hot Drinks <img class="menu-emoji" src="{% static 'images/hot-drink.png' %}" alt="hot-drink"></h2>
+        <h3 class="menu-item">Cafe con Leche...2.6</h3>
         <p>Traditional milky coffee.</p>
-        <h2>Cortado...2.2</h2>
+        <h3 class="menu-item">Cortado...2.2</h3>
         <p>a shorter cafe con leche</p>
-        <h2>Cafe Solo...1.8</h2>
+        <h3 class="menu-item">Cafe Solo...1.8</h3>
         <p>a short black coffee</p>
-        <h2>Americano...1.9</h2>
+        <h3 class="menu-item">Americano...1.9</h3>
         <p>coffee with a dash of hot water</p>
+        <hr>
         <p>Coffee can be decaffeinated or caffeinated and made with either dairy or with one of our plant based milks, see staff for more details.</p>
-        <h2>Welsh Brew Tea...2.1</h2>
+        <hr>
+        <h3 class="menu-item">Welsh Brew Tea...2.1</h3>
         <p>A strong and full-bodied tea blend made from a mixture of Assam and African teas. Served with milk or lemon, as preferred</p>
-        <h2>Herbal Teas...1.9</h2>
-        <p>Please ask our staff for more details about our range of herbal teas.</p>
+        <h3 class="menu-item">Herbal Teas...1.9</h3>
+        <p>Please ask our staff for more details about our range of herbal teas.</p>   
+        <hr>   
+        <h2 class="sub-heading">Allergies & Dietary Requirements <img class="menu-emoji" src="{% static 'images/allergies.png' %}" alt="allergies"></h2>
+        <p>We want your dining experience to be both delicious and safe.</p>
+        <p>If you have any allergies or dietary requirements, please inform our staff, and we will happily accommodate your needs to ensure your meal is enjoyable.</p> 
+        <p>Your health and satisfaction are our top priorities.</p>
     </section>
+  </article>
 {% endblock %}

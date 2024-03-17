@@ -6,7 +6,7 @@
 
 /* General Styles in Body */
 body {
-    min-height: 100vh;
+    min-height: 100%;
     background-color: #fef6f1;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
@@ -34,7 +34,6 @@ header {
   font-style: normal;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 2px;
   color: #db7f50;
 }
 
@@ -61,6 +60,28 @@ header a {
   text-decoration: none;
   color: inherit;
 
+}
+
+#menu{
+  font-size: 0.8rem;
+  position: fixed;
+  right: auto;
+  left: 10px;
+  top: 5px;
+  color: #db7f50;
+  font-family: "Coiny", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+#menu > a:hover {
+  color: #fef6f1;
+  background-color: #db7f50;
 }
 
 .members{
@@ -142,11 +163,20 @@ header a {
   min-height: 60vh;
 }
 
+#landing-image-lrg {
+  display: none;
+}
+
+#landing-image-xlrg {
+  display: none;
+}
+
 #image-title {
   font-family: "Coiny", sans-serif;
   text-align: center;
   position: absolute;
   top: 150px;
+  text-shadow:2px 2px 8px black;
 }
 
 #image-title > h2 {
@@ -157,7 +187,7 @@ header a {
 #image-text {
   position: absolute;
   top: 215px;
-  width: 80%;
+  width: 80%
 }
 
 #image-text > p {
@@ -165,6 +195,7 @@ header a {
   text-align: center;
   font-weight: 800;
   font-size: 12px;
+  text-shadow:2px 2px 8px black;
 }
 
 #image-links {
@@ -179,6 +210,7 @@ header a {
   color: #fef6f1;
   margin: 10px;
   border-bottom: solid 1px #fef6f1;
+  text-shadow:2px 2px 8px black
 }
 
 #image-links > a:hover {
@@ -268,10 +300,10 @@ header a {
 }
 
 #booking-button:hover {
-  margin-top: 10px;
   background-color: #E6A057;
   color: white;
   border: 3px solid white;
+  margin-top: 30px;
 }
 
 #time-main {
@@ -332,6 +364,7 @@ header a {
   background-color: #E6A057;
   color: white;
   border: 3px solid white;
+  margin-top: 30px;
 }
 
 #hero-register {
@@ -478,7 +511,6 @@ footer {
   font-style: normal;
   text-transform: uppercase;
   text-align: center;
-  letter-spacing: 2px;
   color:#fef6f1;
 }
 
@@ -653,6 +685,21 @@ footer {
   color: #db7f50;
 }
 
+#booking-info {
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 15px;
+}
+
+#bookings {
+  font-family: 'Montserrat', sans-serif;
+  color: #db7f50;
+  font-weight: 700;
+  text-align: center;
+}
+
+
 #buttons {
   display:flex;
   justify-content: space-between;
@@ -669,6 +716,64 @@ footer {
   border-radius: 5px;
   padding: 2px;
   margin: 5px;
+}
+
+#menu-main {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+#img-box {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  margin-bottom: 50px;
+  border-radius: 25px;
+}
+
+#menu-image {
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+
+#menu-heading {
+  font-family: "Coiny", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  color: #db7f50;
+  text-align: center;
+}
+
+#menu-heading > p {
+  font-size: 1.2rem;
+}
+
+.menu-emoji {
+  width: 10%;
+  height: 10%;
+}
+
+.sub-heading {
+  text-align: center;
+  margin-bottom: 15px;
+  font-family: "Coiny", sans-serif;
+}
+
+.menu-item {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+  margin-left: 10px;
+}
+
+.menu-list > p {
+  margin-left: 15px;
 }
 
 /* Large mobile devices (portrait large phones, 400px and up) */
@@ -691,4 +796,140 @@ footer {
     top: 300px;
   } */
   
+}
+
+/* For tablets: */
+@media only screen and (min-width: 600px) {
+
+  #hero {
+    max-height: 150px;
+  }
+
+  #hero-time {
+    max-height: 200px;
+  }
+
+  #menu-main > article {
+    display: flex;
+  }
+
+  .menu-list {
+    padding: 15px;
+    border: 0.5rem double;
+  }
+
+  /* Home */
+
+  #image-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+  }
+  
+  #landing-image {
+    display: none;
+  }
+
+  #landing-image-lrg {
+    display: block;
+    overflow: hidden;
+    max-height: 60vh;
+    width: 95%;
+    border-radius: 25px;
+  }
+
+  #image-title {
+    font-family: "Coiny", sans-serif;
+    text-align: center;
+    position: absolute;
+    top: 150px;
+  }
+  
+  #image-title > h2 {
+    font-size: calc(1.325rem + .9vw);
+    color:#fef6f1;
+  }
+  
+  #image-text {
+    position: absolute;
+    top: 215px;
+    width: 80%;
+  }
+  
+  #image-text > p {
+    color:#fef6f1;
+    text-align: center;
+    font-weight: 800;
+    font-size: 12px;
+  }
+  
+  #image-links {
+    position: absolute;
+    top: 260px;
+    font-size: 12px;
+    text-align: center;
+  }
+  
+  #image-links > a {
+    text-decoration: none;
+    color: #fef6f1;
+    margin: 10px;
+    border-bottom: solid 1px #fef6f1;
+  }
+  
+  #image-links > a:hover {
+    border-bottom: 0px solid blue;
+  }
+
+}
+
+/* For desktop: */
+@media only screen and (min-width: 1050px) {
+
+  .home {
+    margin-top: 110px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  #image-box {
+    height: 50vh;
+    overflow: hidden;
+    border-radius: 25px;
+  }
+
+  #landing-image-lrg {
+    display: none;
+  }
+
+  #landing-image-xlrg {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+#image-text {
+  top: 280px;
+}
+
+#image-text > p {
+  font-size: 1.5rem;
+}
+
+#image-links {
+  top: 380px;
+}
+
+#image-links > a {
+  font-size: 1.2rem;
+}
+
+#image-links > a:hover {
+  border-bottom: 0px solid blue;
+}
+
 }
