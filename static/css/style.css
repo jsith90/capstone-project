@@ -7,7 +7,8 @@
 /* General Styles in Body */
 body {
     min-height: 100%;
-    background-color: #fef6f1;
+    /* background-color: #fef6f1; */
+    background-color: #db7f50
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
     color: #db7f50; 
