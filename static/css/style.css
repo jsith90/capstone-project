@@ -955,6 +955,11 @@ footer {
     border-bottom: 0px solid blue;
   }
 
+  /* footer */
+  footer {
+    position: relative;
+  }
+
 }
 
 /* For desktop: */
