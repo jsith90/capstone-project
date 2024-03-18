@@ -145,9 +145,14 @@ header a {
 
 .home {
   margin-top: 110px;
+  /* display: flex;
+  justify-content: center; */
+  margin-bottom: 10px;
+}
+
+#home-flex {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
 }
 
 #image-box {
@@ -535,7 +540,7 @@ footer {
 }
 
 .footer-break {
-  width: 60%;
+  width: 100%;
   color:#fef6f1;
   text-align: center;
 }

@@ -3,21 +3,23 @@
 {% load static %}
 {% block content %}
 <main class="home">
-    <section id="image-box">
-        <img id="landing-image" src="{% static 'images/baix-ebre.jpg' %}" alt="">
-        <img id="landing-image-lrg" src="{% static 'images/baix-ebre2.jpg' %}" alt="">
-        <img id="landing-image-xlrg" src="{% static 'images/baix-ebre2.jpg' %}" alt="">
-        <div id="image-title">
-            <h2><span class="content1">The Catalan-Cymru</span> <span class="content2">Connection</span></h2>
-        </div>
-        <div id="image-text">
-            <p><span class="content1">Bringing the culinary delights of the Baix Ebre to</span> <span class="content2">South Wales</span></p>
-        </div>
-        <div id="image-links" class="active-underline">
-            <a class="active-underline" href="">DISCOVER MORE</a>
-            <a class="active-underline" href="{% url 'table_booking' %}">BOOK A TABLE!</a>
-        </div>
-    </section>
+    <article id="home-flex">
+        <section id="image-box">
+            <img id="landing-image" src="{% static 'images/baix-ebre.jpg' %}" alt="">
+            <img id="landing-image-lrg" src="{% static 'images/baix-ebre2.jpg' %}" alt="">
+            <img id="landing-image-xlrg" src="{% static 'images/baix-ebre2.jpg' %}" alt="">
+            <div id="image-title">
+                <h2><span class="content1">The Catalan-Cymru</span> <span class="content2">Connection</span></h2>
+            </div>
+            <div id="image-text">
+                <p><span class="content1">Bringing the culinary delights of the Baix Ebre to</span> <span class="content2">South Wales</span></p>
+            </div>
+            <div id="image-links" class="active-underline">
+                <a class="active-underline" href="">DISCOVER MORE</a>
+                <a class="active-underline" href="{% url 'table_booking' %}">BOOK A TABLE!</a>
+            </div>
+        </section>
+    </article>
 </main>
 {% endblock %}
 
