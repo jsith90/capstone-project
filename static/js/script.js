@@ -24,7 +24,7 @@ window.onclick = function(event) {
   }
 };
 
-// When the page loads, check if there are messages and show the modal if there are
+// messages modal
 if (document.getElementById("messages").childElementCount > 0) {
   modal4.style.display = "block";
 }
