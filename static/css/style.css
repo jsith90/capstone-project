@@ -629,40 +629,43 @@ footer {
 }
 
 #info-title {
-text-align: center;
-font-family: 'Coiny', sans-serif;
-font-weight: 900;
-margin-bottom: 20px;
-letter-spacing: 2px;
+  text-align: center;
+  font-family: 'Coiny', sans-serif;
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
 }
 
 #details-list {
-margin: 10px;
-padding: 10px;
-border: 3px solid;
-border-radius: 5px;
-background-color: #ffffff;
+  margin: 10px;
+  padding: 10px;
+  border: 3px solid;
+  border-radius: 5px;
+  background-color: #ffffff;
 }
 
 #user-info {
-font-family: 'Montserrat', sans-serif;
-color: #6F2500;
-font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  color: #6F2500;
+  font-weight: 700;
 }
 
 #bookings-heading {
-font-family: "Coiny", sans-serif;
-font-weight: 900;
-text-align: center;
-letter-spacing: 2px;
-color: #6F2500;
+  font-family: "Coiny", sans-serif;
+  font-weight: 900;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #6F2500;
 }
 
 #booking-info {
-margin: 10px;
-padding: 10px;
-background-color: #ffffff;
-border-radius: 15px;
+  margin: 10px;
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #bookings {
@@ -677,21 +680,20 @@ padding: 10px
 }
 
 #buttons {
-display:flex;
-justify-content: space-between;
-
+  display:flex;
+  justify-content: space-between;
 } 
 
 .details-update {
-text-decoration: none;
-background-color: white;
-color:#6F2500;
-border: 3px solid #6F2500;
-font-family: 'Coiny';
-text-align: center;
-border-radius: 5px;
-padding: 2px;
-margin: 5px;
+  text-decoration: none;
+  background-color: white;
+  color:#6F2500;
+  border: 3px solid #6F2500;
+  font-family: 'Coiny';
+  text-align: center;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 5px;
 }
 
 .details-update:hover {
@@ -1005,12 +1007,6 @@ margin: 5px;
   
   #image-links > a:hover {
     border-bottom: 0px solid blue;
-  }
-
-  /* user bookings page */
-
-  #booking-info {
-    display: flex;
   }
 
   /* table bookings form page one stylings */

@@ -47,7 +47,7 @@ def table_booking_submit(request):
     day = request.session.get('day')
     table = request.session.get('table')
     available_times = check_time(times, day, table)
-    if user.is_authenticated:   
+    if user.is_authenticated:
         if request.method == 'POST':
             time = request.POST.get("time")
             date = day_to_day_open(day)
@@ -62,18 +62,53 @@ def table_booking_submit(request):
                                    day = day,
                                    time = time,
                                )
-                                messages.success(request, "Table Booking Made!")
-                                return redirect('index')
+                                messages.success(request, "Your table booking has been made! We look forward to seeing you soon.")
+                                days_open = valid_day(22)
+                                validate_days = is_day_valid(days_open)
+                                return render(request, 'booking/table_booking.html', {
+                                    'days_open': days_open,
+                                    'validate_days': validate_days,
+                                })
                             else:
-                                messages.success(request, "The Selected Time Has Already Been Taken!")
+                                messages.success(request, "The selected time for this table is no longer available!")
+                                days_open = valid_day(22)
+                                validate_days = is_day_valid(days_open)
+                                return render(request, 'booking/table_booking.html', {
+                                    'days_open': days_open,
+                                    'validate_days': validate_days,
+                                })
                         else:
-                            messages.success(request, "The Selected Day Is Full!")
+                            messages.success(request, "The selected day is now full!")
+                            days_open = valid_day(22)
+                            validate_days = is_day_valid(days_open)
+                            return render(request, 'booking/table_booking.html', {
+                                'days_open': days_open,
+                                'validate_days': validate_days,
+                            })
                     else:
-                        messages.success(request, "The Selected Date Is Incorrect")
+                        messages.success(request, "Sorry we're not actually open on that day!")
+                        days_open = valid_day(22)
+                        validate_days = is_day_valid(days_open)
+                        return render(request, 'booking/table_booking.html', {
+                            'days_open': days_open,
+                            'validate_days': validate_days,
+                        })
                 else:
-                    messages.success(request, "The Selected Date Isn't In The Correct Time Period!")
+                    messages.success(request, "Sorry that day isn't available for booking right now!")
+                    days_open = valid_day(22)
+                    validate_days = is_day_valid(days_open)
+                    return render(request, 'booking/table_booking.html', {
+                        'days_open': days_open,
+                        'validate_days': validate_days,
+                    })
             else:
-                messages.success(request, "Please Select Your Table!")
+                messages.success(request, "Sorry that didn't work. Next time please select a table first!")
+                days_open = valid_day(22)
+                validate_days = is_day_valid(days_open)
+                return render(request, 'booking/table_booking.html', {
+                    'days_open': days_open,
+                    'validate_days': validate_days,
+                })
         if not available_times:
             messages.warning(request, "That booking is no longer available.")
             days_open = valid_day(22)
@@ -110,19 +145,23 @@ def user_update(request, id):
     today = datetime.today()
     tomorrow = today + timedelta(days=1)
     min_date = tomorrow.strftime('%Y-%m-%d')
-    delta24 = (user_date_selected).strftime('%Y-%m-%d') >= (today + timedelta(days=1)).strftime('%Y-%m-%d')
+    delta24 = (user_date_selected).strftime('%Y-%m-%d') >= min_date
     days_open = valid_day(22)
     validate_days = is_day_valid(days_open)
     if request.user.is_authenticated:
         if request.user == table_booking.user:
-            if   request.method == 'POST':
-                table = request.POST.get('table')
-                day = request.POST.get('day')
-                request.session['day'] = day
-                request.session['table'] = table
+            if delta24:
+                if  request.method == 'POST':
+                    table = request.POST.get('table')
+                    day = request.POST.get('day')
+                    request.session['day'] = day
+                    request.session['table'] = table
+                    return redirect('user_update_submit', id=id)
+            else:
+                message.error(request, "Editing bookings is only available 24hrs beforehand!")
                 return redirect('user_update_submit', id=id)
         else:
-            messages.success(request, "Unauthorised access.")
+            messages.success(request, "This isn't your booking, so you're not permitted to do that!")
             return render(request, 'booking/index.html')
         return render(request, 'booking/user_update.html', {
                 'days_open':days_open,
@@ -165,25 +204,25 @@ def user_update_submit(request, id):
                                     day = day,
                                     time = time,
                                 ) 
-                                messages.success(request, "Your Booking Has Been Successfully Updated!")
+                                messages.success(request, "Your booking has been successfully updated!")
                                 return redirect('index')
                             else:
-                                messages.success(request, "The Selected Time Has Been Taken!")
+                                messages.error(request, "The selected time has been taken!")
                         else:
-                            messages.success(request, "The Selected Day Is Full!")
+                            messages.error(request, "Thes elected day is now fully booked!")
                     else:
-                        messages.success(request, "The Selected Date Is Incorrect")
+                        messages.error(request, "Sorry, we're not open on that day!")
                 else:
-                    messages.success(request, "The Selected Date Isn't In The Correct Time Period!")
+                    messages.error(request, "Sorry we're not taking bookings for that date!")
             else:
-                messages.success(request, "Please Select Your Table!")
+                messages.error(request, "Please select a table before choosing a time!")
             return redirect('user_panel')
         return render(request, 'booking/user_update_submit.html', {
         'times':hour,
         'id': id,
         })
     else:
-        messages.success(request, 'Unauthorised access.')
+        messages.error(request, "That's not your booking, so you can't do that.")
         return render(request, 'booking/index.html')
     
 def staff_panel(request):
@@ -199,13 +238,16 @@ def staff_panel(request):
             'items':items,
         })
     else:
-        messages.success(request, "You are not authorised to view that page.")
+        messages.error(request, "You are not authorised to view that page.")
         return redirect('index')
 
 def day_to_day_open(x):
-    z = datetime.strptime(x, "%Y-%m-%d")
-    y = z.strftime('%A')
-    return y
+    if x is None:
+        return None
+    else:
+        z = datetime.strptime(x, "%Y-%m-%d")
+        y = z.strftime('%A')
+        return y
 
 def valid_day(days):
     today = datetime.now()
@@ -221,7 +263,7 @@ def valid_day(days):
 def is_day_valid(x):
     validate_days = []
     for j in x:
-        if Table_Booking.objects.filter(day=j).count() < 39:
+        if Table_Booking.objects.filter(day=j).count() < 40:
             validate_days.append(j)
     return validate_days
 
@@ -248,19 +290,20 @@ def delete_booking(request, booking_id):
     if request.user.is_authenticated:
         if request.user == table_booking.user:
             today = datetime.today()
+            tomorrow = today + timedelta(days=1)
             booking_date = table_booking.day
-            min_deletion_date = today + timedelta(days=1)
+            min_deletion_date = tomorrow
             if booking_date >= min_deletion_date.date():
                 table_booking.delete()
                 messages.success(request, ("Booking successfully cancelled!"))
                 return redirect ('user_panel')
             else:
-                messages.success(request, "You cannot delete this booking as it is less than 24 hours ahead of the booking time.")
+                messages.error(request, "You cannot delete this booking as it is less than 24 hours ahead of the booking time.")
                 return redirect ('user_panel')
         else:
-            messages.success(request, ("You aren't authorised to do that!"))
+            messages.error(request, ("You aren't authorised to do that!"))
             return redirect('user_panel')
     else:
-        messages.success(request, ("Please log-in to delete your bookings"))
+        messages.error(request, ("Please log-in to delete your bookings"))
         return redirect('index')
 
