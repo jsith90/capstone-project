@@ -412,7 +412,7 @@ header a {
   text-align: center;
   font-family: 'Coiny', sans-serif;
   font-weight: 500;
-  color:#db7f50;
+  color:#6F2500;
 }
 
 .line-break {
@@ -430,9 +430,9 @@ header a {
 }
 
 #register-button {
-  background-color: white;
-  color: #E6A057;
-  border: 3px solid #E6A057;
+  background-color: #fef6f1;
+  color: #6F2500;
+  border: 3px solid #6F2500;
   font-family: 'Coiny';
   text-align: center;
   border-radius: 5px;
@@ -442,9 +442,9 @@ header a {
 
 #register-button:hover {
   margin-top: 10px;
-  background-color: #E6A057;
-  color: white;
-  border: 3px solid white;
+  background-color: #6F2500;
+  color: #fef6f1;
+  border: 3px solid #fef6f1;
 }
 
 #login {
@@ -476,7 +476,7 @@ background-color: #fef6f1;
 text-align: center;
 font-family: 'Coiny', sans-serif;
 font-weight: 500;
-color:#db7f50;
+color: #6F2500;
 }
 
 #login-form{
@@ -490,9 +490,9 @@ margin-bottom: 30px;
 }
 
 #login-button {
-background-color: white;
-color: #E6A057;
-border: 3px solid #E6A057;
+background-color: #fef6f1;
+color: #6F2500;
+border: 3px solid #6F2500;
 font-family: 'Coiny';
 text-align: center;
 border-radius: 5px;
@@ -502,9 +502,9 @@ align-self: center;
 
 #login-button:hover {
 margin-top: 10px;
-background-color: #E6A057;
-color: white;
-border: 3px solid white;
+background-color: #6F2500;
+color: #fef6f1;
+border: 3px solid #fef6f1;
 }
 
 /* footer {
@@ -528,6 +528,7 @@ footer {
   /* height: 100%; */
   padding-top: 10px;
   padding-bottom: 50px;
+  border-top: 0.2rem solid;
   /* position: relative;
   bottom: -10px;
   top: 0; */
@@ -768,7 +769,7 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   background-color: #fef6f1;
 }
 
