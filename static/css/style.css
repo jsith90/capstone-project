@@ -128,7 +128,6 @@ header a {
   margin-right: 40px;
   font-family: "Coiny", sans-serif;
   font-weight: 800;
-  font-style: ExtraBold;
   font-size: 150%;
   letter-spacing: 2px;
   list-style-type: none;
@@ -604,7 +603,6 @@ footer {
   margin-right: 40px;
   font-family: "Coiny", sans-serif;
   font-weight: 800;
-  font-style: ExtraBold;
   font-size: 150%;
   letter-spacing: 2px;
   list-style-type: none;
@@ -612,14 +610,14 @@ footer {
   margin-bottom: 100px;
 }
 
-.id02 {
+.edit {
   background-color: #F8E2D6;
   color: #E18F54;
   display: flex;
   flex-direction: column;
 }
 
-.id01 {
+.delete {
   background-color: #F8E2D6;
   color: #E18F54;
   display: flex;
@@ -638,7 +636,6 @@ footer {
   margin-right: 40px;
   font-family: "Coiny", sans-serif;
   font-weight: 500;
-  font-style: ExtraBold;
   font-size: 20px;
   letter-spacing: 2px;
   list-style-type: none;
@@ -664,7 +661,6 @@ footer {
   text-align: center;
   border-radius: 5px;
   padding: 5px;
-  align-self: cen
 }
 
 .deletebtn:hover {

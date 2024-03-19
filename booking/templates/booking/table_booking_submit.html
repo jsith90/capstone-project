@@ -2,13 +2,13 @@
 {% load static %}
 {% block content %}
 <main id="time-main">
-    <section id="hero-time">
+    <div id="hero-time">
         <img id="time-image" src="{% static 'images/time.jpg' %}" alt="">
-    </section>
+    </div>
     <section id="time-background">
-        <h1 id="time-heading">Choose a Time:</h1>
+        <h2 id="time-heading">Choose a Time:</h2>
         <div class="form-input">
-            <form method="post" action="{% url 'table_booking_submit' %}" class="center-form" required>
+            <form method="post" action="{% url 'table_booking_submit' %}" class="center-form">
                 {% csrf_token %}
                 <h3 class="table-title">Available Times:</h3>
                 <div>
