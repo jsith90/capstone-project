@@ -8,10 +8,9 @@
 body {
     min-height: 100%;
     /* background-color: #fef6f1; */
-    background-color: #db7f50;
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    color: #db7f50; 
+    color: #6F2500; 
     background-color: #fef6f1;
 }
 
@@ -23,7 +22,7 @@ header {
   top: 0;
   z-index: 99;
   width: 100%;
-  height: 100px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   justify-content:flex-end;
@@ -36,24 +35,31 @@ header {
   font-style: normal;
   text-transform: uppercase;
   text-align: center;
-  color: #db7f50;
+  color: #6F2500;
 }
 
 #banner {
   display: flex;
   height: auto;
   width: 100%;
-  background-color: #E6A057;
+  background-color: #6F2500;
   justify-content: center;
   align-content: center;
 }
 
-#banner > h4 {
+.lemon {
+  margin: 5px;
+  height: 30px;
+}
+
+#banner > h2 {
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-left: 10px;
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   text-align: center;
-  font-size: 12px;
-  margin-top: 3px;
+  font-size: 14px;
   color: #fef6f1;
   letter-spacing: 2px;
 }
@@ -70,7 +76,7 @@ header a {
   right: auto;
   left: 10px;
   top: 5px;
-  color: #db7f50;
+  color: #6F2500;
   font-family: "Coiny", sans-serif;
   font-weight: 100;
   font-style: normal;
@@ -83,7 +89,7 @@ header a {
 
 #menu > a:hover {
   color: #fef6f1;
-  background-color: #db7f50;
+  background-color: #6F2500;
 }
 
 .members{
@@ -92,23 +98,23 @@ header a {
   left: auto;
   right: 10px;
   top: 5px;
-  color: #db7f50;
+  color: #6F2500;
 }
 
 .modal {
   justify-content: center;
   background-color: #F8E2D6;
-  color: #E18F54;
+  color: #6F2500;
 }
 
 .close {
   background-color: #F8E2D6;
-  color: #E18F54;
+  color: #6F2500;
   font-family: "Coiny", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
-  border: 3px solid #E18F54;
+  border: 3px solid #6F2500;
   border-radius: 5px;
   padding: 3px;
   width: 100px;
@@ -117,7 +123,7 @@ header a {
 }
 
 .close:hover {
-  background-color:#E18F54;
+  background-color:#6F2500;
   color: #F8E2D6;
   border: 3px solid #F8E2D6;
 }
@@ -140,12 +146,12 @@ header a {
 }
 
 .active:hover {
-  background-color: #E18F54;
+  background-color: #6F2500;
   color: #fef6f1;
 }
 
 .home {
-  margin-top: 110px;
+  margin-top: 140px;
   /* display: flex;
   justify-content: center; */
   margin-bottom: 10px;
@@ -173,10 +179,12 @@ header a {
 
 #landing-image-lrg {
   display: none;
+  border-radius: 25px;
 }
 
 #landing-image-xlrg {
   display: none;
+  border-radius: 25px;
 }
 
 #image-title {
@@ -244,7 +252,7 @@ header a {
   text-align: center;
   font-family: 'Coiny', sans-serif;
   font-weight: 500;
-  color:#db7f50;
+  color:#6F2500;
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -263,7 +271,7 @@ header a {
 .form-input {
   width: 90%;
   padding: 60px;
-  background-color:#fef6f1;
+  background-color:#ffffff;
   border-radius: 10px;
   display: flex;
   justify-content: center;
@@ -279,27 +287,27 @@ header a {
 .table-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 600;
-  color:#db7f50;
+  color:#6F2500;
 
 }
 
 #table-select {
   background-color: #fef6f1;
   font-family: 'Montserrat', sans-serif;
-  color: #db7f50;
+  color: #6F2500;
 }
 
 #day-select {
   background-color: #fef6f1;
   font-family: 'Montserrat', sans-serif;
-  color: #db7f50;
+  color: #6F2500;
 }
 
 #booking-button {
   margin-top: 30px;
   background-color: white;
-  color: #E6A057;
-  border: 3px solid #E6A057;
+  color: #6F2500;
+  border: 3px solid #6F2500;
   font-family: 'Coiny';
   text-align: center;
   border-radius: 5px;
@@ -308,9 +316,9 @@ header a {
 }
 
 #booking-button:hover {
-  background-color: #E6A057;
-  color: white;
-  border: 3px solid white;
+  background-color: #6F2500;
+  color: #fef6f1;
+  border: 3px solid #fef6f1;
   margin-top: 30px;
 }
 
@@ -333,7 +341,7 @@ header a {
   text-align: center;
   font-family: 'Coiny', sans-serif;
   font-weight: 500;
-  color:#db7f50;
+  color:#6F2500;
   margin-top: 40px;
   margin-bottom: 20px;
 }
@@ -352,14 +360,14 @@ header a {
 #time-select {
   background-color: #fef6f1;
   font-family: 'Montserrat', sans-serif;
-  color: #db7f50;
+  color: #6F2500;
 }
 
 #time-button {
   margin-top: 30px;
-  background-color: white;
-  color: #E6A057;
-  border: 3px solid #E6A057;
+  background-color: #fef6f1;
+  color: #6F2500;
+  border: 3px solid #6F2500;
   font-family: 'Coiny';
   text-align: center;
   border-radius: 5px;
@@ -369,9 +377,9 @@ header a {
 
 #time-button:hover {
   margin-top: 10px;
-  background-color: #E6A057;
-  color: white;
-  border: 3px solid white;
+  background-color: #6F2500;
+  color: #fef6f1;
+  border: 3px solid #fef6f1;
   margin-top: 30px;
 }
 
@@ -511,11 +519,11 @@ border: 3px solid white;
 } */
 
 footer {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  justify-content: space-evenly; */
+  /* justify-content: space-evenly; */
   align-items: center;
-  background-color: #db7f50;
+  background-color: #fef6f1;
   width: 100%;
   /* height: 100%; */
   padding-top: 10px;
@@ -534,7 +542,7 @@ footer {
   font-style: normal;
   text-transform: uppercase;
   text-align: center;
-  color:#fef6f1;
+  color:#6F2500;
 }
 
 .footing > h1 {
@@ -542,8 +550,8 @@ footer {
 }
 
 .footer-break {
-  width: 100%;
-  color:#fef6f1;
+  width: 80%;
+  color:#6F2500;
   text-align: center;
 }
 
@@ -555,17 +563,17 @@ footer {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 2px;
-  color:#fef6f1;
+  color:#6F2500;
 }
 
 .contact > p {
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 15px; 
   font-style: normal;
   text-align: center;
   letter-spacing: 2px;
-  color:#fef6f1;
+  color:#6F2500;
   margin: 5px;
 }
 
@@ -577,24 +585,24 @@ footer {
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 2px;
-  color:#fef6f1;
+  color:#6F2500;
 }
 
 .times > p {
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 15px; 
   font-style: normal;
   text-transform: uppercase;
   text-align: center;
   letter-spacing: 2px;
-  color:#fef6f1;
+  color:#6F2500;
   margin: 5px;
 }
 
 #messageModal {
   background-color: #F8E2D6;
-  color: #E18F54;
+  color: #6F2500;
 }
 
 #messages {
@@ -612,14 +620,14 @@ footer {
 
 .edit {
   background-color: #F8E2D6;
-  color: #E18F54;
+  color: #6F2500;
   display: flex;
   flex-direction: column;
 }
 
 .delete {
   background-color: #F8E2D6;
-  color: #E18F54;
+  color: #6F2500;
   display: flex;
   flex-direction: column;
 }
@@ -694,12 +702,14 @@ footer {
 #details-list {
   margin: 10px;
   padding: 10px;
+  border: 3px solid;
+  border-radius: 5px;
   background-color: #ffffff;
 }
 
 #user-info {
   font-family: 'Montserrat', sans-serif;
-  color: #db7f50;
+  color: #6F2500;
   font-weight: 700;
 }
 
@@ -708,7 +718,7 @@ footer {
   font-weight: 900;
   text-align: center;
   letter-spacing: 2px;
-  color: #db7f50;
+  color: #6F2500;
 }
 
 #booking-info {
@@ -720,9 +730,13 @@ footer {
 
 #bookings {
   font-family: 'Montserrat', sans-serif;
-  color: #db7f50;
+  color: #6F2500;
   font-weight: 700;
   text-align: center;
+  border-radius: 5px;
+  border: 3px solid;
+  margin: 10px;
+  padding: 10px
 }
 
 #buttons {
@@ -734,8 +748,8 @@ footer {
 .details-update {
   text-decoration: none;
   background-color: white;
-  color:#db7f50;
-  border: 3px solid #db7f50;
+  color:#6F2500;
+  border: 3px solid #6F2500;
   font-family: 'Coiny';
   text-align: center;
   border-radius: 5px;
@@ -744,12 +758,12 @@ footer {
 }
 
 .details-update:hover {
-    background-color: #db7f50;
+    background-color: #6F2500;
     color:#fef6f1;
 }
 
 #menu-main {
-  margin-top: 90px;
+  margin-top: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -778,7 +792,7 @@ footer {
   font-family: "Coiny", sans-serif;
   font-weight: 100;
   font-style: normal;
-  color: #db7f50;
+  color: #6F2500;
   text-align: center;
 }
 
@@ -845,7 +859,7 @@ footer {
 }
 
 .update-booking {
-    margin-top: 110px;
+    margin-top: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -856,28 +870,43 @@ footer {
   text-align: center;
   font-family: 'Coiny', sans-serif;
   font-weight: 500;
-  color:#db7f50;
+  color:#6F2500;
   margin-top: 40px;
   margin-bottom: 20px;
 }
 
+
+
 #update-select-table {
   background-color: #fef6f1;
   font-family: 'Montserrat', sans-serif;
-  color: #db7f50;
+  color: #6F2500;
 }
 
 #update-select-day {
   background-color: #fef6f1;
   font-family: 'Montserrat', sans-serif;
-  color: #db7f50;
+  color: #6F2500;
 }
 
 #update-select-time {
   background-color: #fef6f1;
   font-family: 'Montserrat', sans-serif;
-  color: #db7f50;
+  color: #6F2500;
   margin-bottom: 15px;
+}
+
+#staff {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#customers {
+  margin-top: 170px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  width: 90%;
 }
 
 /* Large mobile devices (portrait large phones, 400px and up) */
@@ -904,6 +933,10 @@ footer {
 
 /* For tablets: */
 @media only screen and (min-width: 600px) {
+
+  #booking-info {
+    display: flex;
+  }
 
   #hero {
     max-height: 150px;
@@ -1001,7 +1034,7 @@ footer {
 @media only screen and (min-width: 1050px) {
 
   .home {
-    margin-top: 110px;
+    margin-top: 140px;
     margin-left: 20px;
     margin-right: 20px;
   }
@@ -1022,21 +1055,26 @@ footer {
     overflow: hidden;
   }
 
-#image-text {
-  top: 280px;
-}
+  #image-title {
+    top: 190px;
+  }
 
-#image-text > p {
-  font-size: 1.5rem;
-}
 
-#image-links {
-  top: 380px;
-}
+  #image-text {
+    top: 290px;
+  }
 
-#image-links > a {
-  font-size: 1.2rem;
-}
+  #image-text > p {
+    font-size: 1.5rem;
+  }
+
+  #image-links {
+    top: 380px;
+  }
+
+  #image-links > a {
+   font-size: 1.2rem;
+  }
 
 #image-links > a:hover {
   border-bottom: 0px solid blue;
