@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <main class="home">
-    <article id="home-flex">
+    <div id="home-flex">
         <section id="image-box">
             <img id="landing-image" src="{% static 'images/baix-ebre.jpg' %}" alt="">
             <img id="landing-image-lrg" src="{% static 'images/baix-ebre2.jpg' %}" alt="">
@@ -18,7 +18,7 @@
                 <a class="active-underline" href="{% url 'table_booking' %}">BOOK A TABLE!</a>
             </div>
         </section>
-    </article>
+    </div>
 </main>
 {% endblock %}
 

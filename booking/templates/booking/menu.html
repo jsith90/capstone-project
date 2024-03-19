@@ -2,16 +2,16 @@
 {% load static %}
 {% block content %}
 <main id="menu-main">
-  <section id="img-box">
+  <div id="img-box">
     <img id="menu-image" src="{% static 'images/menu-image.jpg' %}" alt="">
-  </section>
+  </div>
     <section id="menu-heading">
-        <h1 class="menu-title">OUR MENU</h1>
+        <h2 class="menu-title">OUR MENU</h2>
         <img class="menu-emoji" src="{% static 'images/menu.png' %}" alt="knife and fork and plate emoji">
         <p class="hero-menu">Baix Ebre Inspired Tapas and Beverages.
         </p>
     </section>
-    <article>
+    <div id="menu-content">
     <hr>
     <section class="menu-list">
         <h2 class="sub-heading">Catalan Tapas <img class="menu-emoji" src="{% static 'images/catalan-flag.png' %}" alt="catalan-flag"></h2>
@@ -96,5 +96,6 @@
         <p>If you have any allergies or dietary requirements, please inform our staff, and we will happily accommodate your needs to ensure your meal is enjoyable.</p> 
         <p>Your health and satisfaction are our top priorities.</p>
     </section>
-  </article>
+  </div>
+</main>
 {% endblock %}

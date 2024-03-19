@@ -917,7 +917,7 @@ footer {
     max-height: 200px;
   }
 
-  #menu-main > article {
+  #menu-content {
     display: flex;
   }
 

@@ -2,11 +2,11 @@
 {% load static %}
 {% block content %}
 	<main id="register">
-		<section id="hero-register">
+		<div id="hero-register">
 			<img id="register-image" src="{% static 'images/register.jpg' %}" alt="Blurred image of Spanish buildings">
-		</section>
+		</div>
 		<section id="register-main">
-			<h1 id="register-heading">Create a Profile</h1>
+			<h2 id="register-heading">Create a Profile</h2>
 			<hr class="line-break">
 			<form action="{% url 'register_user' %}" method=POST id="register-form">
 			{% csrf_token %}

@@ -2,21 +2,21 @@
 {% load static %}
 {% block content %}
 	<main id="login">
-		<section id="hero-login">
+		<div id="hero-login">
 			<img id="login-image" src="{% static 'images/login.jpg' %}" alt="Image of Spanish Plaza">
-		</section>
+		</div>
 		<section id="login-main">
-			<h1 id="login-heading">Login</h1>
+			<h2 id="login-heading">Login</h2>
 			<hr class="line-break">
 			<form id="login-form" method=POST>
 				{% csrf_token %}
   					<div class="mb-3">
-    					<label for="exampleInputEmail1" class="form-label">Username:</label>
-    					<input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+    					<label for="username" class="form-label">Username:</label>
+    					<input id="username" type="text" class="form-control" name="username">
   					</div>
   					<div class="mb-3">
-    					<label for="exampleInputPassword1" class="form-label">Password:</label>
-    					<input type="password" class="form-control" name="password">
+    					<label for="password" class="form-label">Password:</label>
+    					<input id="password" type="password" class="form-control" name="password">
   					</div>
 					<hr class="line-break">
 					<input type="submit" value="Submit" id="login-button">
