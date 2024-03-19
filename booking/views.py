@@ -65,10 +65,7 @@ def table_booking_submit(request):
                                 messages.success(request, "Your table booking has been made! We look forward to seeing you soon.")
                                 days_open = valid_day(22)
                                 validate_days = is_day_valid(days_open)
-                                return render(request, 'booking/table_booking.html', {
-                                    'days_open': days_open,
-                                    'validate_days': validate_days,
-                                })
+                                return redirect('user_panel')
                             else:
                                 messages.success(request, "The selected time for this table is no longer available!")
                                 days_open = valid_day(22)
