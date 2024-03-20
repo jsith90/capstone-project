@@ -10,15 +10,15 @@
         <div class="form-input">
             <form method="post" action="{% url 'table_booking_submit' %}" class="center-form">
                 {% csrf_token %}
-                <h3 class="table-title">Available Times:</h3>
                 <div>
+                    <label for="time-select"><h3 class="table-title">Available Times:</h3></label>
                     <select id="time-select" class="form-select fs-3 text-center" name="time">
                         {% for time in times %}
                         <option value="{{time}}">{{time}}</option>
                         {% endfor %}
                     </select>
                 </div>
-                <button type="submit" id="time-button">Make Booking</button>
+                <button aria-label="click to make table booking" type="submit" id="time-button">Make Booking</button>
             </form>
         </div>
     </section>  

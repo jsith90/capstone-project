@@ -4,9 +4,9 @@
 <main id="home">
     <div id="home-flex">
         <section id="image-box">
-            <img id="landing-image" src="{% static 'images/baix-ebre.jpg' %}" alt="">
-            <img id="landing-image-lrg" src="{% static 'images/baix-ebre2.jpg' %}" alt="">
-            <img id="landing-image-xlrg" src="{% static 'images/baix-ebre2.jpg' %}" alt="">
+            <img id="landing-image" src="{% static 'images/baix-ebre.jpg' %}" alt="hero image of an olive grove in the Baix Ebre">
+            <img id="landing-image-lrg" src="{% static 'images/baix-ebre2.jpg' %}" alt="hero image of an olive grove in the Baix Ebre">
+            <img id="landing-image-xlrg" src="{% static 'images/baix-ebre2.jpg' %}" alt="hero image of an olive grove in the Baix Ebre">
             <div id="image-title">
                 <h2><span class="content1">The Catalan-Cymru</span> <span class="content2">Connection</span></h2>
             </div>
@@ -14,8 +14,8 @@
                 <p><span class="content1">Bringing the culinary delights of the Baix Ebre to</span> <span class="content2">South Wales</span></p>
             </div>
             <div id="image-links" class="active-underline">
-                <a class="active-underline" href="">DISCOVER MORE</a>
-                <a class="active-underline" href="{% url 'table_booking' %}">BOOK A TABLE!</a>
+                <a aria-label="Opens about page" class="active-underline" href="">DISCOVER MORE</a>
+                <a aria-label="Opens bar menu page" class="active-underline" href="{% url 'table_booking' %}">BOOK A TABLE!</a>
             </div>
         </section>
     </div>

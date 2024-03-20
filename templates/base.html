@@ -15,35 +15,35 @@
 <body>
   <header>
     <div id="menu">
-      <a href="{% url 'menu' %}">MENU</a> 
+      <a aria-label="Open Page for Bar Menu" href="{% url 'menu' %}">MENU</a> 
     </div>
     <div class="members">
-      <i onclick="document.getElementById('nav-links').style.display='block'" class="active fa-regular fa-circle-user"></i>
-      <nav id="nav-links" class="modal">
+      <i aria-label="Open Nav for Registered User Features" onclick="document.getElementById('nav-links').style.display='block'" class="active fa-regular fa-circle-user"></i>
+      <nav id="nav-links" class="modal" aria-label="Nav for Registered Users">
           <ul id="members-menu">
-              <li onclick="document.getElementById('nav-links').style.display='none'" class="close active">X CLOSE</li>
+              <li  aria-label="Close Nav for Registered User Features" onclick="document.getElementById('nav-links').style.display='none'" class="close active">X CLOSE</li>
               {% if user.is_authenticated %}
-              <li><a href="{% url 'table_booking' %}" class="active">Book a Table</a></li>
-              <li><a class="active" href="{% url 'user_panel' %}">Your Bookings</a></li>
+              <li><a  aria-label="Table Booking Form Page" href="{% url 'table_booking' %}" class="active">Book a Table</a></li>
+              <li><a  aria-label="User Bookings Page" class="active" href="{% url 'user_panel' %}">Your Bookings</a></li>
                 {% if user.is_superuser %}
-              <li><a class="active" href="{% url 'staff_panel' %}">Customer Bookings</a></li>
+              <li><a  aria-label="Customer Bookings Page" class="active" href="{% url 'staff_panel' %}">Customer Bookings</a></li>
                 {% endif %}
-              <li><a href="{% url 'logout' %}" class="active">Logout</a></li>
+              <li><a  aria-label="Logout of User account" href="{% url 'logout' %}" class="active">Logout</a></li>
               {% else %}
-              <li><a class="active" href="{% url 'register_user' %}">Register</a></li>
-              <li><a class="active" href="{% url 'login_user' %}">Login</a></li>
+              <li><a  aria-label="Register a User Account" class="active" href="{% url 'register_user' %}">Register</a></li>
+              <li><a  aria-label="Login to User Account" class="active" href="{% url 'login_user' %}">Login</a></li>
               {% endif %}
           </ul>
       </nav>
     </div>
-    <nav id="messageModal" class="modal">
+    <nav id="messageModal" class="modal" aria-label="Nav for Messages">
 	    <div id="messages">
       		<!--Messages-->
       		{% if messages %}
       		{% for message in messages %}
           	<div role="alert">
-		          <p onclick="document.getElementById('messageModal').style.display='none'" class="close active">X CLOSE</p>
-              <h3 class="display-3">{{ message }}</h3>
+		          <p  aria-label="Close Message Modal" onclick="document.getElementById('messageModal').style.display='none'" class="close active">X CLOSE</p>
+              <h3  aria-label="message" class="display-3">{{ message }}</h3>
           	</div>
       		{% endfor %}
       		{% endif %}
@@ -55,7 +55,7 @@
             <h1>la cucafera</h1>
         </a>
     </div>
-    <div id="banner"><img class="lemon" src="{% static 'images/lemon.png' %}"><h2> vegetarian tapas to be proud of </h2><img class="lemon" src="{% static 'images/lemon.png' %}"></div>
+    <div id="banner"><img class="lemon" src="{% static 'images/lemon.png' %}" alt="lemon emoji around subheading"><h2> vegetarian tapas to be proud of </h2><img class="lemon" src="{% static 'images/lemon.png' %}" alt="lemon emoji around subheading"></div>
   </header>
   {% block content %}
   {% endblock %}
@@ -64,7 +64,7 @@
         <h1>la cucafera</h1>
     </div>
     <hr class="footer-break">
-    <section class="contact">
+    <section class="contact" aria-label="email and location address details">
         <h2>get in touch</h2>
         <hr>
         <p>enquiry@lacucafera.com</p>
@@ -76,7 +76,7 @@
         <p>WALES</p>
     </section>
     <hr class="footer-break">
-    <section class="times">
+    <section class="times" aria-label="opening times">
         <h2>opening times</h2>
         <hr>
         <p>mon closed</p>
