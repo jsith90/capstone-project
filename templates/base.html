@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vegetarian Tapas Bar in Cardiff".>
     <title>La Cucafera | Veg Tapas</title>
     <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +44,7 @@
       		{% for message in messages %}
           	<div role="alert">
 		          <p  aria-label="Close Message Modal" onclick="document.getElementById('messageModal').style.display='none'" class="close active">X CLOSE</p>
-              <h3  aria-label="message" class="display-3">{{ message }}</h3>
+              <h3  aria-label="site message" class="display-3">{{ message }}</h3>
           	</div>
       		{% endfor %}
       		{% endif %}
@@ -55,7 +56,7 @@
             <h1>la cucafera</h1>
         </a>
     </div>
-    <div id="banner"><img class="lemon" src="{% static 'images/lemon.png' %}" alt="lemon emoji around subheading"><h2> vegetarian tapas to be proud of </h2><img class="lemon" src="{% static 'images/lemon.png' %}" alt="lemon emoji around subheading"></div>
+    <div id="banner"><img class="lemon" src="{% static 'images/lemon.png' %}" alt="lemon emoji."><h2> vegetarian tapas to be proud of </h2><img class="lemon" src="{% static 'images/lemon.png' %}" alt="lemon emoji."></div>
   </header>
   {% block content %}
   {% endblock %}
