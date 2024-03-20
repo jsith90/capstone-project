@@ -25,7 +25,7 @@
           <div id="booking-info">
             {% for table_booking in table_bookings %}
               {% if table_booking.day >= today %}
-                <div id="bookings">
+                <div class="bookings">
                   <p class="list-group mt-2">Day: {{ table_booking.day }}</p>
                   <p class="list-group mt-2">Time: {{ table_booking.time }}</p>
                   <p class="list-group mt-2">Table {{ table_booking.table }}</p>
@@ -37,7 +37,7 @@
                             <button aria-label="Open Edit Booking Modal" onclick="document.getElementById('edit').style.display='flex'" class="deletebtn">Edit Booking</button>
                             <div id="edit" class="modal">
                               <div class="edit">
-                                <span aria-label="Close Edit Booking Modal" onclick="document.getElementById('edit').style.display='none'" class="close crud" title="Close Modal">Close X</span>
+                                <span class="close crud" title="Close Modal"><a aria-label="Close Edit Booking Modal" onclick="document.getElementById('edit').style.display='none'">Close X</a></span>
                                 <form class="modal-content" action="/action_page.php">
                                   <div class="container">
                                     <h2>Edit Booking</h2>
@@ -55,7 +55,7 @@
                             <button aria-label="Open Cancel Booking Modal" onclick="document.getElementById('delete').style.display='flex'" class="deletebtn">Cancel Booking</button>
                             <div id="delete" class="modal">
                               <div class="delete">
-                                <span aria-label="Close Cancel Booking Modal" onclick="document.getElementById('delete').style.display='none'" class="close crud" title="Close Modal">Close X</span>
+                                <span class="close crud" title="Close Modal"><a aria-label="Close Cancel Booking Modal" onclick="document.getElementById('delete').style.display='none'">Close X</a></span>
                                 <form class="modal-content" action="/action_page.php">
                                   <div class="container">
                                     <h2>Cancel Booking</h2>

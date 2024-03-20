@@ -19,6 +19,7 @@ body {
 .active:hover {
   background-color: #6F2500;
   color: #fef6f1;
+  cursor: pointer;
 }
 
 /* Navbar Stylings */
@@ -128,7 +129,9 @@ header a {
   width: 100px;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 }
+
 
 .close:hover {
   background-color:#6F2500;
@@ -668,7 +671,7 @@ footer {
   justify-content: center;
 }
 
-#bookings {
+.bookings {
 font-family: 'Montserrat', sans-serif;
 color: #6F2500;
 font-weight: 700;

@@ -4,10 +4,11 @@
 <main class="update-booking">
    <h2 class="update-title">Edit Booking</h2>
     <div class="form-input">
-        <form method="post" action="{% url 'user_update' id %}" class="center-form" required>
+        <form method="post" action="{% url 'user_update' id %}" class="center-form">
             {% csrf_token %}
             <div>
-                <label for="update-select-table"><h3 class="table-title">Select Your Table:</h3></label>
+                <h3 class="table-title">Select Your Table:</h3>
+                <label for="update-select-table">
                 <select id="update-select-table" class="form-select fs-3" name="table">
                     <option value="1">"Table 1 (2 seats)"</option>
                     <option value="2">"Table 2 (2 seats)"</option>
@@ -17,15 +18,16 @@
                     <option value="6">"Table 6 (4 seats)"</option>
                     <option value="7">"Table 7 (8 seats)"</option>
                     <option value="8">"Table 8 (8 seats)"</option>
-                </select>
+                </select></label>
             </div>
             <div class="mt-3">
-                <label for="update-select-day"><h3 class="">Select Day:</h3></label>
+                <h3 class="">Select Day:</h3>
+                <label for="update-select-day">
                 <select class="form-select fs-3" id="update-select-day" name="day">
                     {% for validate_day in validate_days %}
                     <option value="{{validate_day}}">{{validate_day}}</option>
                     {% endfor %}
-                </select>
+                </select></label>
                 <br>
                 <button aria-label="click to update booking time" type="submit" class="deletebtn">Continue</button>
             </div>
