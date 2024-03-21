@@ -3,6 +3,7 @@
 {% block content %}
 <main class="update-booking">
    <h2 class="update-title">Edit Booking</h2>
+   <p>Please note: online booking updates or cancellations cannot be made on the same day your booking is scheduled for.</p>
     <div class="form-input">
         <form method="post" action="{% url 'user_update' id %}" class="center-form">
             {% csrf_token %}
@@ -28,7 +29,8 @@
                     <option value="{{validate_day}}">{{validate_day}}</option>
                     {% endfor %}
                 </select></label>
-                <br>
+            </div>
+            <div id="update-booking-button">
                 <button aria-label="click to update booking time" type="submit" class="deletebtn">Continue</button>
             </div>
         </form>

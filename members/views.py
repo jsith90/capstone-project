@@ -18,7 +18,8 @@ def login_user(request):
             messages.success(request, ("Welcome back!"))
             return redirect('index')
         else:
-            messages.success(request, ("There was an error logging in, try again..."))  # noqa
+            messages.success(request,
+            ("There was an error logging in, try again..."))
             return redirect('login_user')
     else:
         return render(request, 'authenticate/login.html', {})
@@ -36,7 +37,7 @@ def register_user(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']  # noqa
+            password = form.cleaned_data['password1']
             user = authenticate(username=username, password=password)
             login(request, user)
             messages.success(request, ("Registration successful!"))
@@ -56,11 +57,13 @@ def details_update(request, id):
                 form = UserUpdateForm(request.POST, instance=user)
                 if form.is_valid():
                     form.save()
-                    messages.success(request, "User details updated successfully.")  # noqa
+                    messages.success(request,
+                    "User details updated successfully.")
                     return redirect('user_panel')
             else:
                 form = UserUpdateForm(instance=user)
-            return render(request, 'authenticate/details_update.html', {'form': form})  # noqa
+            return render(request, 'authenticate/details_update.html',
+            {'form': form})
         else:
             messages.success(request, 'You are not authorised to do that.')
             return render(request, 'booking/index.html')

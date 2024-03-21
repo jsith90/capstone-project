@@ -18,19 +18,19 @@
         </div>
       </div>
     </section>
-    {% if table_bookings.count > 0 %}
+    {% if bookings.count > 0 %}
       <section>
         <div class="mt-5 ">
           <h2 id="bookings-heading">Your Bookings:</h2>
           <div id="booking-info">
-            {% for table_booking in table_bookings %}
-              {% if table_booking.day >= today %}
+            {% for booking in table_bookings %}
+              {% if booking.day >= today %}
                 <div class="bookings">
-                  <p class="list-group mt-2">Day: {{ table_booking.day }}</p>
-                  <p class="list-group mt-2">Time: {{ table_booking.time }}</p>
-                  <p class="list-group mt-2">Table {{ table_booking.table }}</p>
-                    {% if user.is_authenticated and table_booking.user == user %}
-                      {% if table_booking.day > today %}
+                  <p class="list-group mt-2">Day: {{ booking.day }}</p>
+                  <p class="list-group mt-2">Time: {{ booking.time }}</p>
+                  <p class="list-group mt-2">Table {{ booking.table }}</p>
+                    {% if user.is_authenticated and booking.user == user %}
+                      {% if booking.day > today %}
                       <hr>
                         <div class="mt-3 mb-2">
                           <div class="card-footer text-body-secondary">
@@ -44,7 +44,7 @@
                                     <p>Are you sure you want to make changes to your booking?</p>
                                     <div class="clearfix">
                                       <a aria-label="Close Edit Booking Modal" onclick="document.getElementById('edit').style.display='none'" class="cancelbtn btn btn-outline-primary btn-sm">Keep Booking</a>
-                                      <a aria-label="Open Page for Update Booking Form" class="deletebtn btn btn-outline-danger btn-sm" href="{% url 'user_update' table_booking.id %}">Change Booking</a>
+                                      <a aria-label="Open Page for Update Booking Form" class="deletebtn btn btn-outline-danger btn-sm" href="{% url 'user_update' booking.id %}">Change Booking</a>
                                     </div>
                                   </div>
                                 </form>
@@ -62,7 +62,7 @@
                                     <p>Are you sure you want to cancel your table booking?</p>
                                     <div class="clearfix">
                                       <a aria-label="Close Cancel Booking Modal" onclick="document.getElementById('delete').style.display='none'" class="cancelbtn btn btn-outline-primary btn-sm">Keep Booking</a>
-                                      <a aria-label="Click to Cancel Booking" href="{% url 'delete_booking' table_booking.id %}" class="deletebtn btn btn-outline-danger btn-sm">Cancel Booking</a>
+                                      <a aria-label="Click to Cancel Booking" href="{% url 'delete_booking' booking.id %}" class="deletebtn btn btn-outline-danger btn-sm">Cancel Booking</a>
                                     </div>
                                   </div>
                                 </form>
@@ -72,7 +72,7 @@
                         </div>
                       {% else %}
                       <div class="card-footer text-body-secondary">
-                        <p>If a last minute change to your booking is needed. Please contact us on: 02920111111</p>
+                        <p id="last-minute">If you need to make a last minute change to your booking. Please contact us on: 02920111111.</p>
                       </div>
                     </div>
                       {% endif %}
@@ -85,5 +85,20 @@
         </div>
       </section>
     {% endif %}
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        {% if table_bookings.has_previous %}
+        <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ table_bookings.previous_page_number }}">Previous</a></li>
+        {% endif %}
+        <li class="page-item disabled"><a href="#" class="page-link">Page {{ table_bookings.number }} of
+            {{ table_bookings.paginator.num_pages }}</a></li>
+        {% if table_bookings.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ table_bookings.next_page_number }}">Next</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ table_bookings.paginator.num_pages }}">Last &raquo</a>
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
   </main>
 {% endblock %}

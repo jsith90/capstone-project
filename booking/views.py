@@ -4,6 +4,7 @@ from .models import *
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.paginator import Paginator
 
 
 def index(request):
@@ -45,7 +46,7 @@ def table_booking_submit(request):
     today = datetime.now()
     tomorrow = today + timedelta(days=1)
     min_date = tomorrow.strftime('%Y-%m-%d')
-    deltatime = today + timedelta(days=21)
+    deltatime = tomorrow + timedelta(days=21)
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     max_date = strdeltatime
     day = request.session.get('day')
@@ -130,10 +131,14 @@ def user_panel(request):
     user = request.user
     if user.is_authenticated:
         current_date = datetime.now().date()
-        table_bookings = Table_Booking.objects.filter(user=user, day__gte=current_date).order_by('day', 'time')  # noqa
+        bookings = Table_Booking.objects.filter(user=user, day__gte=current_date).order_by('day', 'time')
+        p = Paginator(bookings, 1)  # noqa
         today = date.today()
+        page = request.GET.get('page')
+        table_bookings = p.get_page(page)
         return render(request, 'booking/user_panel.html', {
             'user': user,
+            'bookings': bookings,
             'table_bookings': table_bookings,
             'today': today,
         })
@@ -147,13 +152,12 @@ def user_update(request, id):
     user_date_selected = table_booking.day
     today = datetime.today()
     tomorrow = today + timedelta(days=1)
-    min_date = tomorrow.strftime('%Y-%m-%d')
-    delta24 = (user_date_selected).strftime('%Y-%m-%d') >= min_date
+    min_deletion_date = tomorrow
     days_open = valid_day(22)
     validate_days = is_day_valid(days_open)
     if request.user.is_authenticated:
         if request.user == table_booking.user:
-            if delta24:
+            if user_date_selected >= min_deletion_date.date():
                 if request.method == 'POST':
                     table = request.POST.get('table')
                     day = request.POST.get('day')
@@ -161,15 +165,14 @@ def user_update(request, id):
                     request.session['table'] = table
                     return redirect('user_update_submit', id=id)
             else:
-                message.error(request, "Editing bookings is only available 24hrs beforehand!")  # noqa
-                return redirect('user_update_submit', id=id)
+                messages.error(request, "Editing bookings is only available on the days before your booking!")  # noqa
+                return redirect('user_panel')
         else:
             messages.success(request, "This isn't your booking, so you're not permitted to do that!")  # noqa
             return render(request, 'booking/index.html')
         return render(request, 'booking/user_update.html', {
                 'days_open': days_open,
                 'validate_days': validate_days,
-                'delta24': delta24,
                 'id': id,
             })
     else:
@@ -182,49 +185,59 @@ def user_update_submit(request, id):
     times = [
         "1 PM", "3 PM", "5 PM", "7 PM", "9 PM"
     ]
+    table_booking = Table_Booking.objects.get(pk=id)
     today = datetime.now()
     tomorrow = today + timedelta(days=1)
+    user_date_selected = table_booking.day
     min_date = tomorrow.strftime('%Y-%m-%d')
-    deltatime = today + timedelta(days=21)
+    delta24 = (user_date_selected).strftime('%Y-%m-%d') >= min_date
+    deltatime = tomorrow + timedelta(days=21)
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     max_date = strdeltatime
     day = request.session.get('day')
     table = request.session.get('table')
     hour = check_edit_time(times, day, id)
-    table_booking = Table_Booking.objects.get(pk=id)
     user_selected_time = table_booking.time
     if user == table_booking.user:
-        if request.method == 'POST':
-            time = request.POST.get("time")
-            date = day_to_day_open(day)
-            if table is not None:
-                if day <= max_date and day >= min_date:
-                    if date == 'Thursday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':  # noqa
-                        if Table_Booking.objects.filter(day=day).count() < 40:
-                            if Table_Booking.objects.filter(day=day, time=time).count() < 1 or user_selected_time == time:  # noqa
-                                Table_Booking_Form = Table_Booking.objects.filter(pk=id).update(  # noqa
-                                    user=user,
-                                    table=table,
-                                    day=day,
-                                    time=time,
-                                    )
-                                messages.success(request, "Your booking has been successfully updated!")  # noqa
-                                return redirect('index')
+        if delta24:
+            if request.method == 'POST':
+                time = request.POST.get("time")
+                date = day_to_day_open(day)
+                if table is not None:
+                    if day <= max_date and day >= min_date:
+                        if date == 'Thursday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':  # noqa
+                            if Table_Booking.objects.filter(day=day).count() < 40:
+                                if Table_Booking.objects.filter(day=day, time=time).count() < 1 or user_selected_time == time:  # noqa
+                                    Table_Booking_Form = Table_Booking.objects.filter(pk=id).update(  # noqa
+                                        user=user,
+                                        table=table,
+                                        day=day,
+                                        time=time,
+                                        )
+                                    messages.success(request, "Your booking has been successfully updated!")  # noqa
+                                    return redirect('user_panel')
+                                else:
+                                    messages.error(request, "The selected time has been taken!")  # noqa
+                                    return redirect('user_panel')  
                             else:
-                                messages.error(request, "The selected time has been taken!")  # noqa
+                                messages.error(request, "Thes elected day is now fully booked!")  # noqa
+                                return redirect('user_panel')  
                         else:
-                            messages.error(request, "Thes elected day is now fully booked!")  # noqa
+                            messages.error(request, "Sorry, we're not open on that day!")  # noqa
+                            return redirect('user_panel')
                     else:
-                        messages.error(request, "Sorry, we're not open on that day!")  # noqa
+                        messages.error(request, "Sorry we're not taking bookings for that date!")  # noqa
+                        return redirect('user_panel')  
                 else:
-                    messages.error(request, "Sorry we're not taking bookings for that date!")  # noqa
-            else:
-                messages.error(request, "Please select a table before choosing a time!")  # noqa
+                    messages.error(request, "Please select a table before choosing a time!")  # noqa
+                return redirect('user_panel')
+            return render(request, 'booking/user_update_submit.html', {
+                'times': hour,
+                'id': id,
+            })
+        else:
+            messages.error(request, "Editing bookings is only available on the days before your booking!")  # noqa
             return redirect('user_panel')
-        return render(request, 'booking/user_update_submit.html', {
-            'times': hour,
-            'id': id,
-        })
     else:
         messages.error(request, "That's not your booking, so you can't do that.")  # noqa
         return render(request, 'booking/index.html')
@@ -305,11 +318,11 @@ def delete_booking(request, booking_id):
             booking_date = table_booking.day
             min_deletion_date = tomorrow
             if booking_date >= min_deletion_date.date():
-                table_booking.delete()
+                Table_Booking.objects.get(pk=booking_id).delete()
                 messages.success(request, ("Booking successfully cancelled!"))
                 return redirect('user_panel')
             else:
-                messages.error(request, "You cannot delete this booking as it is less than 24 hours ahead of the  # noqa booking time.")
+                messages.error(request, "You cannot delete this booking as it is less than 24 hours ahead of the booking time.")  # noqa
                 return redirect('user_panel')
         else:
             messages.error(request, ("You aren't authorised to do that!"))
