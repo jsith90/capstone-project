@@ -102,13 +102,14 @@ header a {
 .members{
   position: fixed;
   left: auto;
-  right: 10px;
-  top: 0;
+  right: 3px;
+  top: 2px;
 }
 
 .members > button {
   color:#6F2500;
   display: contents;
+  font-size: 1.5rem;
 }
 
 /* Navbar modal */
@@ -148,7 +149,7 @@ header a {
   margin-right: 40px;
   font-family: "Coiny", sans-serif;
   font-weight: 800;
-  font-size: 150%;
+  font-size: 35px;
   letter-spacing: 2px;
   list-style-type: none;
   text-align: center;
@@ -1117,7 +1118,7 @@ footer {
   
   /* navbar */
   
-  .members{
+  .members > button {
     font-size: 2rem;
   }
 
