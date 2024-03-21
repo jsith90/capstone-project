@@ -43,7 +43,7 @@
       		{% if messages %}
       		{% for message in messages %}
           	<div role="alert">
-		          <a aria-label="Close Message Modal" onclick="document.getElementById('messageModal').style.display='none'" class="close active">X CLOSE</a>
+		          <button aria-label="Close Message Modal" onclick="document.getElementById('messageModal').style.display='none'" class="close active">X CLOSE</button>
               <h3  aria-label="site message" class="display-3">{{ message }}</h3>
           	</div>
       		{% endfor %}
