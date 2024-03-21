@@ -13,16 +13,18 @@
                 <div class="selector">
                     <h3 class="table-title">Available Times:</h3>
                     <label for="time-select">
-                    <select id="time-select" class="form-select fs-3 text-center" name="time">
-                        {% for time in times %}
-                        <option value="{{time}}">{{time}}</option>
-                        {% endfor %}
-                    </select></label>
+                        <select id="time-select" class="form-select fs-3 text-center" name="time">
+                            {% for time in times %}
+                            <option value="{{time}}">{{time}}</option>
+                            {% endfor %}
+                        </select>
+                    </label>
                 </div>
                 <div class="selector">
-                    <label for="special-requirements">
                     <h3 class="table-title">Special Requirements:</h3>
-                    <textarea id="special-requirements" name="special_requirements" rows="4" cols="50" placeholder="Please let us know if you have special requirements for your booking.">{{ special_requirements|default:'' }}</textarea></label>
+                    <label for="special-requirements">
+                        <textarea id="special-requirements" name="special_requirements" rows="4" cols="50" placeholder="Please let us know if you have special requirements for your booking.">{{ special_requirements|default:'' }}</textarea>
+                    </label>
                 </div>
                 <div>
                     <button aria-label="click to make table booking" type="submit" id="time-button">Make Booking</button>

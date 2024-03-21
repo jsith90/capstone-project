@@ -9,16 +9,18 @@
             <div class="selector">
                 <h3 class="table-title">Time:</h3>
                 <label for="update-select-time">
-                <select id="update-select-time" class="form-select fs-3 text-center" name="time">
-                    {% for time in times %}
-                    <option value="{{time}}">{{time}}</option>
-                    {% endfor %}
-                </select></label>
+                    <select id="update-select-time" class="form-select fs-3 text-center" name="time">
+                        {% for time in times %}
+                        <option value="{{time}}">{{time}}</option>
+                        {% endfor %}
+                    </select>
+                </label>
             </div>
             <div class="selector">
                 <h3 class="table-title">Special Requirements:</h3>
                 <label for="special-requirements">
-                <textarea id="special-requirements" name="special_requirements" rows="4" cols="50">{{ special_requirements|default:'' }}</textarea></label>
+                    <textarea id="special-requirements" name="special_requirements" rows="4" cols="50">{{ special_requirements|default:'' }}</textarea>
+                </label>
             </div>
             <div id="button-margin">
                 <button aria-label="click to update booking" type="submit" class="deletebtn">Update Booking</button>

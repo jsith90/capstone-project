@@ -229,7 +229,7 @@ def user_update_submit(request, id):
                                         table=table,
                                         day=day,
                                         time=time,
-                                        special_requirements=special_requirements,
+                                        special_requirements=special_requirements,  # noqa
                                         )
                                     messages.success(request,
                                                      "Your booking has been updated!")  # noqa

@@ -19,10 +19,10 @@
       <a aria-label="Open Page for Bar Menu" href="{% url 'menu' %}">MENU</a> 
     </div>
     <div class="members">
-      <a aria-label="Open Nav for Registered User Features" onclick="document.getElementById('nav-links').style.display='block'" class="active"><i class="active fa-regular fa-circle-user"></i></a>
+      <button aria-label="Open Nav for Registered User Features" onclick="document.getElementById('nav-links').style.display='block'" class="active"><i class="active fa-regular fa-circle-user"></i></button>
       <nav id="nav-links" class="modal" aria-label="Nav for Registered Users">
           <ul id="members-menu">
-              <li class="close active"><a aria-label="Close Nav for Registered User Features" onclick="document.getElementById('nav-links').style.display='none'">X CLOSE</a></li>
+              <li class="close active"><button aria-label="Close Nav for Registered User Features" onclick="document.getElementById('nav-links').style.display='none'">X CLOSE</button></li>
               {% if user.is_authenticated %}
               <li><a  aria-label="Table Booking Form Page" href="{% url 'table_booking' %}" class="active">Book a Table</a></li>
               <li><a  aria-label="User Bookings Page" class="active" href="{% url 'user_panel' %}">Your Bookings</a></li>
