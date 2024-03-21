@@ -19,7 +19,7 @@ def login_user(request):
             return redirect('index')
         else:
             messages.success(request,
-            ("There was an error logging in, try again..."))
+                             ("There was an error logging in, try again..."))
             return redirect('login_user')
     else:
         return render(request, 'authenticate/login.html', {})
@@ -58,17 +58,18 @@ def details_update(request, id):
                 if form.is_valid():
                     form.save()
                     messages.success(request,
-                    "User details updated successfully.")
+                                     "User details updated successfully.")
                     return redirect('user_panel')
             else:
                 form = UserUpdateForm(instance=user)
             return render(request, 'authenticate/details_update.html',
-            {'form': form})
+                          {'form': form})
         else:
             messages.success(request, 'You are not authorised to do that.')
             return render(request, 'booking/index.html')
     else:
-        messages.success(request, 'Please log-in to make changes to your profile.')  # noqa
+        messages.success(request,
+                         'Please log-in to make changes to your profile.')
         return redirect('login_user')
 
 

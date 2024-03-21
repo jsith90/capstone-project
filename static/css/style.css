@@ -716,6 +716,12 @@ padding: 10px
   border: 2px solid #6F2500
 }
 
+.pagination {
+  border: 2px solid;
+  font-family: 'Coiny';
+  border-radius: 5px;
+}
+
 /* edit booking and cancel booking modals on user bookings page */
 
 .edit {

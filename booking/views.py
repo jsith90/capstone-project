@@ -67,28 +67,34 @@ def table_booking_submit(request):
                                    day=day,
                                    time=time,
                                 )
-                                messages.success(request, "Your table booking has been made! We look forward to seeing you soon.")  # noqa
+                                messages.success(request,
+                                                 "Your table booking has been made!")  # noqa
                                 days_open = valid_day(22)
                                 validate_days = is_day_valid(days_open)
                                 return redirect('user_panel')
                             else:
-                                messages.success(request, "The selected time for this table is no longer available!")  # noqa
+                                messages.success(request,
+                                                 "This booking is not available!")  # noqa
                                 days_open = valid_day(22)
                                 validate_days = is_day_valid(days_open)
-                                return render(request, 'booking/table_booking.html', {  # noqa
-                                    'days_open': days_open,
-                                    'validate_days': validate_days,
-                                })
+                                return render(request,
+                                              'booking/table_booking.html', {
+                                               'days_open': days_open,
+                                               'validate_days': validate_days,
+                                              })
                         else:
-                            messages.success(request, "The selected day is now full!")  # noqa
+                            messages.success(request,
+                                             "The selected day is now full!")
                             days_open = valid_day(22)
                             validate_days = is_day_valid(days_open)
-                            return render(request, 'booking/table_booking.html', {  # noqa
-                                'days_open': days_open,
-                                'validate_days': validate_days,
-                            })
+                            return render(request,
+                                          'booking/table_booking.html', {
+                                           'days_open': days_open,
+                                           'validate_days': validate_days,
+                                          })
                     else:
-                        messages.success(request, "Sorry we're not actually open on that day!")  # noqa
+                        messages.success(request,
+                                         "Sorry we're not open on that day!")
                         days_open = valid_day(22)
                         validate_days = is_day_valid(days_open)
                         return render(request, 'booking/table_booking.html', {
@@ -96,7 +102,8 @@ def table_booking_submit(request):
                             'validate_days': validate_days,
                         })
                 else:
-                    messages.success(request, "Sorry that day isn't available for booking right now!")  # noqa
+                    messages.success(request,
+                                     "That day isn't available right now!")
                     days_open = valid_day(22)
                     validate_days = is_day_valid(days_open)
                     return render(request, 'booking/table_booking.html', {
@@ -104,7 +111,8 @@ def table_booking_submit(request):
                         'validate_days': validate_days,
                     })
             else:
-                messages.success(request, "Sorry that didn't work. Next time please select a table first!")  # noqa
+                messages.success(request,
+                                 "Please select a table first!")
                 days_open = valid_day(22)
                 validate_days = is_day_valid(days_open)
                 return render(request, 'booking/table_booking.html', {
@@ -131,8 +139,8 @@ def user_panel(request):
     user = request.user
     if user.is_authenticated:
         current_date = datetime.now().date()
-        bookings = Table_Booking.objects.filter(user=user, day__gte=current_date).order_by('day', 'time')
-        p = Paginator(bookings, 1)  # noqa
+        bookings = Table_Booking.objects.filter(user=user, day__gte=current_date).order_by('day', 'time')  # noqa
+        p = Paginator(bookings, 1)
         today = date.today()
         page = request.GET.get('page')
         table_bookings = p.get_page(page)
@@ -165,10 +173,12 @@ def user_update(request, id):
                     request.session['table'] = table
                     return redirect('user_update_submit', id=id)
             else:
-                messages.error(request, "Editing bookings is only available on the days before your booking!")  # noqa
+                messages.error(request,
+                                "Editing bookings is only available on the days before your booking!")  # noqa
                 return redirect('user_panel')
         else:
-            messages.success(request, "This isn't your booking, so you're not permitted to do that!")  # noqa
+            messages.success(request,
+                             "This isn't your booking, so can't do that!")
             return render(request, 'booking/index.html')
         return render(request, 'booking/user_update.html', {
                 'days_open': days_open,
@@ -206,7 +216,7 @@ def user_update_submit(request, id):
                 if table is not None:
                     if day <= max_date and day >= min_date:
                         if date == 'Thursday' or date == 'Friday' or date == 'Saturday' or date == 'Sunday':  # noqa
-                            if Table_Booking.objects.filter(day=day).count() < 40:
+                            if Table_Booking.objects.filter(day=day).count() < 40:  # noqa
                                 if Table_Booking.objects.filter(day=day, time=time).count() < 1 or user_selected_time == time:  # noqa
                                     Table_Booking_Form = Table_Booking.objects.filter(pk=id).update(  # noqa
                                         user=user,
@@ -214,32 +224,40 @@ def user_update_submit(request, id):
                                         day=day,
                                         time=time,
                                         )
-                                    messages.success(request, "Your booking has been successfully updated!")  # noqa
+                                    messages.success(request,
+                                                     "Your booking has been updated!")  # noqa
                                     return redirect('user_panel')
                                 else:
-                                    messages.error(request, "The selected time has been taken!")  # noqa
-                                    return redirect('user_panel')  
+                                    messages.error(request,
+                                                   "That time is taken!")
+                                    return redirect('user_panel')
                             else:
-                                messages.error(request, "Thes elected day is now fully booked!")  # noqa
-                                return redirect('user_panel')  
+                                messages.error(request,
+                                               "This day is fully booked!")
+                                return redirect('user_panel')
                         else:
-                            messages.error(request, "Sorry, we're not open on that day!")  # noqa
+                            messages.error(request,
+                                           "We're not open on that day!")
                             return redirect('user_panel')
                     else:
-                        messages.error(request, "Sorry we're not taking bookings for that date!")  # noqa
-                        return redirect('user_panel')  
+                        messages.error(request,
+                                       "Sorry no bookings for that date!")
+                        return redirect('user_panel')
                 else:
-                    messages.error(request, "Please select a table before choosing a time!")  # noqa
+                    messages.error(request,
+                                   "Please select a table first!")
                 return redirect('user_panel')
             return render(request, 'booking/user_update_submit.html', {
                 'times': hour,
                 'id': id,
             })
         else:
-            messages.error(request, "Editing bookings is only available on the days before your booking!")  # noqa
+            messages.error(request,
+                           "Editing bookings is only available on the days before your booking!")  # noqa
             return redirect('user_panel')
     else:
-        messages.error(request, "That's not your booking, so you can't do that.")  # noqa
+        messages.error(request,
+                       "That's not your booking, so you can't do that.")
         return render(request, 'booking/index.html')
 
 
@@ -322,7 +340,8 @@ def delete_booking(request, booking_id):
                 messages.success(request, ("Booking successfully cancelled!"))
                 return redirect('user_panel')
             else:
-                messages.error(request, "You cannot delete this booking as it is less than 24 hours ahead of the booking time.")  # noqa
+                messages.error(request,
+                               "Cancelling bookings is only available on the days before your booking!")  # noqa
                 return redirect('user_panel')
         else:
             messages.error(request, ("You aren't authorised to do that!"))
