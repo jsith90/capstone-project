@@ -15,6 +15,7 @@
             <th for="table-booked" class="text-center" scope="col">Table</th>
             <th for="date-of-booking" class="text-center" scope="col">Date</th>
             <th for="time-of-booking" class="text-center" scope="col">Time</th>
+            <th for="special-requirements" class="text-center" scope="col">Requirements</th>
           </tr>
         </thead>
         <tbody id="findTable">
@@ -26,6 +27,7 @@
             <td id="table-booked" class="text-center">Table {{item.table}}</td>
             <td id="date-of-booking" class="text-center">{{item.day}}</td>
             <td id="time-of-booking" class="text-center">{{item.time}}</td>
+            <td id="special-requirements" class="text-center">{{item.special_requirements}}</td>
           </tr>
         {% endfor %}
         </tbody>

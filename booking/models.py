@@ -31,5 +31,6 @@ class Table_Booking(models.Model):
     day = models.DateField(default=datetime.now)
     time = models.CharField(max_length=5, choices=TIME_CHOICES, default="1 PM")
     time_ordered = models.DateTimeField(default=datetime.now, blank=True)
+    special_requirements = models.TextField(max_length=2000, blank=True, null=True, default="No requirements.")
     def __str__(self):
-        return f"{self.user.username} | day: {self.day} | time: {self.time} | table: {self.table}" 
+        return f"{self.user.username} | day: {self.day} | time: {self.time} | table: {self.table} | special_requirements: {self.special_requirements}"

@@ -7,7 +7,7 @@
     <div class="form-input">
         <form method="post" action="{% url 'user_update' id %}" class="center-form">
             {% csrf_token %}
-            <div>
+            <div class="selector">
                 <h3 class="table-title">Select Your Table:</h3>
                 <label for="update-select-table">
                 <select id="update-select-table" class="form-select fs-3" name="table">
@@ -21,7 +21,7 @@
                     <option value="8">"Table 8 (8 seats)"</option>
                 </select></label>
             </div>
-            <div class="mt-3">
+            <div class="selector">
                 <h3 class="">Select Day:</h3>
                 <label for="update-select-day">
                 <select class="form-select fs-3" id="update-select-day" name="day">

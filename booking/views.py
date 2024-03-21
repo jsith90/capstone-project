@@ -51,10 +51,12 @@ def table_booking_submit(request):
     max_date = strdeltatime
     day = request.session.get('day')
     table = request.session.get('table')
+    special_requirements = request.session.get('special_requirements')
     available_times = check_time(times, day, table)
     if user.is_authenticated:
         if request.method == 'POST':
             time = request.POST.get("time")
+            special_requirements = request.POST.get("special_requirements")
             date = day_to_day_open(day)
             if table is not None:
                 if day <= max_date and day >= min_date:
@@ -66,6 +68,7 @@ def table_booking_submit(request):
                                    table=table,
                                    day=day,
                                    time=time,
+                                   special_requirements=special_requirements
                                 )
                                 messages.success(request,
                                                  "Your table booking has been made!")  # noqa
@@ -129,6 +132,7 @@ def table_booking_submit(request):
             })
         return render(request, 'booking/table_booking_submit.html', {
                 'times': available_times,
+                'special_requirements': special_requirements,
         })
     else:
         messages.success(request, 'Please sign in to make a table booking.')
@@ -206,12 +210,14 @@ def user_update_submit(request, id):
     max_date = strdeltatime
     day = request.session.get('day')
     table = request.session.get('table')
+    special_requirements = request.session.get('special_requirements')
     hour = check_edit_time(times, day, id)
     user_selected_time = table_booking.time
     if user == table_booking.user:
         if delta24:
             if request.method == 'POST':
                 time = request.POST.get("time")
+                special_requirements = request.POST.get("special_requirements")
                 date = day_to_day_open(day)
                 if table is not None:
                     if day <= max_date and day >= min_date:
@@ -223,6 +229,7 @@ def user_update_submit(request, id):
                                         table=table,
                                         day=day,
                                         time=time,
+                                        special_requirements=special_requirements,
                                         )
                                     messages.success(request,
                                                      "Your booking has been updated!")  # noqa
@@ -250,6 +257,7 @@ def user_update_submit(request, id):
             return render(request, 'booking/user_update_submit.html', {
                 'times': hour,
                 'id': id,
+                'special_requirements': special_requirements,
             })
         else:
             messages.error(request,
