@@ -9,25 +9,25 @@
       <table class="table table-bordered table-striped table-hover mx-auto" aria-label="table of customer bookings">
         <thead>
           <tr>
-            <th for="first-name" class="text-center" scope="col">First Name</th>
-            <th for="last-name" class="text-center" scope="col">Last Name</th>
-            <th for="email-address" class="text-center" scope="col">Email</th>
-            <th for="table-booked" class="text-center" scope="col">Table</th>
-            <th for="date-of-booking" class="text-center" scope="col">Date</th>
-            <th for="time-of-booking" class="text-center" scope="col">Time</th>
-            <th for="special-requirements" class="text-center" scope="col">Requirements</th>
+            <th class="text-center" scope="col">First Name</th>
+            <th class="text-center" scope="col">Last Name</th>
+            <th class="text-center" scope="col">Email</th>
+            <th class="text-center" scope="col">Table</th>
+            <th class="text-center" scope="col">Date</th>
+            <th class="text-center" scope="col">Time</th>
+            <th class="text-center" scope="col">Requirements</th>
           </tr>
         </thead>
         <tbody id="findTable">
         {% for item in items %}
           <tr>
-            <td id="first-name" class="text-center">{{item.user.first_name}}</td>
-            <td id="last-name" class="text-center">{{item.user.last_name}}</td>
-            <td id="email-address" class="text-center">{{item.user.email}}</td>
-            <td id="table-booked" class="text-center">Table {{item.table}}</td>
-            <td id="date-of-booking" class="text-center">{{item.day}}</td>
-            <td id="time-of-booking" class="text-center">{{item.time}}</td>
-            <td id="special-requirements" class="text-center">{{item.special_requirements}}</td>
+            <td class="text-center">{{item.user.first_name}}</td>
+            <td class="text-center">{{item.user.last_name}}</td>
+            <td class="text-center">{{item.user.email}}</td>
+            <td class="text-center">Table {{item.table}}</td>
+            <td class="text-center">{{item.day}}</td>
+            <td class="text-center">{{item.time}}</td>
+            <td class="text-center">{{item.special_requirements}}</td>
           </tr>
         {% endfor %}
         </tbody>
