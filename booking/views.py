@@ -273,7 +273,7 @@ def staff_panel(request):
     user = request.user
     today = datetime.today()
     min_date = today.strftime('%Y-%m-%d')
-    deltatime = today + timedelta(days=21)
+    deltatime = today + timedelta(days=22)
     strdeltatime = deltatime.strftime('%Y-%m-%d')
     max_date = strdeltatime
     if user.is_authenticated and user.is_superuser:
