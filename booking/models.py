@@ -3,10 +3,13 @@ from cloudinary.models import CloudinaryField
 from datetime import datetime
 from django.contrib.auth.models import User
 
-# created during set up 
+# created during set up
+
+
 class CloudinaryTest(models.Model):
     title = models.CharField(max_length=100)
     image = CloudinaryField('image', default='placeholder')
+
 
 TABLE_CHOICES = (
     ("Table 1 (2 seats)", "Table 1 (2 seats)"),
@@ -26,12 +29,20 @@ TIME_CHOICES = (
     ("9 PM", "9 PM"),
 )
 # model for table bookings
+
+
 class Table_Booking(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
-    table = models.CharField(max_length=50, choices=TABLE_CHOICES, default="Table 1 (2 seats)")
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE, null=True, blank=True)
+    table = models.CharField(max_length=50,
+                             choices=TABLE_CHOICES,
+                             default="Table 1 (2 seats)")
     day = models.DateField(default=datetime.now)
     time = models.CharField(max_length=5, choices=TIME_CHOICES, default="1 PM")
     time_ordered = models.DateTimeField(default=datetime.now, blank=True)
-    special_requirements = models.TextField(max_length=2000, blank=True, null=True, default="No requirements.")
+    special_requirements = models.TextField(max_length=2000,
+                                            blank=True, null=True, 
+                                            default="No requirements.")
+
     def __str__(self):
-        return f"{self.user.username} | day: {self.day} | time: {self.time} | table: {self.table} | special_requirements: {self.special_requirements}"
+        return f"{self.user.username} | day: {self.day} | time: {self.time} | table: {self.table} | special_requirements: {self.special_requirements}"  # noqa
