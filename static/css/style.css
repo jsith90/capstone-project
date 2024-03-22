@@ -259,6 +259,7 @@ header a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 120px;
 }
 
 #hero {
@@ -367,6 +368,7 @@ header a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 130px;
 }
 
 #hero-time {
@@ -435,6 +437,7 @@ header a {
 #register {
   display: flex;
   flex-direction: column;
+  margin-top: 120px;
 }
 
 #hero-register {
