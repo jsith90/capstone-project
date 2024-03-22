@@ -262,15 +262,6 @@ header a {
   margin-top: 120px;
 }
 
-#hero {
-  margin-top: 100px;
-  width: 100%;
-}
-
-#hero-image {
-  width: 100%;
-}
-
 #booking-heading {
   text-align: center;
   font-family: 'Coiny', sans-serif;
@@ -371,15 +362,6 @@ header a {
   margin-top: 130px;
 }
 
-#hero-time {
-  margin-top: 100px;
-  width: 100%;
-}
-
-#time-image {
-  width: 100%;
-}
-
 #time-heading {
   text-align: center;
   font-family: 'Coiny', sans-serif;
@@ -438,16 +420,6 @@ header a {
   display: flex;
   flex-direction: column;
   margin-top: 120px;
-}
-
-#hero-register {
-    margin-top: 100px;
-    width: 100%;
-    max-height: 200px;
-}
-  
-#register-image {
-  width: 100%;
 }
 
 #register-main {
