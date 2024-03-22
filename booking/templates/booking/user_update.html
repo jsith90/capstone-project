@@ -1,12 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<!-- first page of the table bookings update form -->
 <main class="update-booking">
    <h2 class="update-title">Edit Booking</h2>
    <p>Please note: online booking updates or cancellations cannot be made on the same day your booking is scheduled for.</p>
+   <!-- form -->
     <div class="form-input">
         <form method="post" action="{% url 'user_update' id %}" class="center-form">
             {% csrf_token %}
+            <!-- table selection -->
             <div class="selector">
                 <h3 class="table-title">Select Your Table:</h3>
                 <label for="update-select-table">
@@ -22,6 +25,7 @@
                 </select>
                 </label>
             </div>
+            <!-- day selection -->
             <div class="selector">
                 <h3 class="">Select Day:</h3>
                 <label for="update-select-day">

@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<!-- second booking form page -->
 <main id="time-main">
+    <!-- hero image for second bookings page -->
     <div id="hero-time">
         <img id="time-image" src="{% static 'images/time.webp' %}" alt="A woman in the middle of a meal at a restaurant holding a glass of red wine in her right hand.">
     </div>
+    <!-- booking form -->
     <section id="time-background">
         <h2 id="time-heading">Choose a Time:</h2>
         <div class="form-input">
+            <!-- time selection -->
             <form method="post" action="{% url 'table_booking_submit' %}" class="center-form">
                 {% csrf_token %}
                 <div class="selector">
@@ -20,6 +24,7 @@
                         </select>
                     </label>
                 </div>
+                <!-- special requirements section -->
                 <div class="selector">
                     <h3 class="table-title">Special Requirements (Optional):</h3>
                     <label for="special-requirements">

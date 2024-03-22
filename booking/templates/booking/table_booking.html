@@ -1,13 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<!-- first table booking form page -->
 <main id="booking-main">
+    <!-- hero image -->
     <div id="hero"> 
         <img id="hero-image" src="{% static 'images/booking.webp' %}" alt="A tapas dish of toasted bread and avocado dip with an out of focus warmly lit restaurant interior in the background.">
     </div>
+    <!-- booking form -->
     <section id="form-background">
         <h2 id="booking-heading">Table Booking</h2>
         <p>Please note: bookings, online booking updates or cancellations cannot be made on the same day your booking is scheduled for. Please call us if you want a booking for today: 029-20-111111</p>
+        <!-- table selection -->
         <div class="form-input">
             <form method="post" action="{% url 'table_booking' %}" class="center-form">
                 {% csrf_token %}
@@ -26,6 +30,7 @@
                         </select>
                     </label>
                 </div>
+                <!-- day selection -->
                 <div class="selector">
                     <h3 class="table-title">Select Day:</h3>
                     <label for="day-select">

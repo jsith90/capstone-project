@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import update_session_auth_hash
 
-
+# login page
 def login_user(request):
     if request.method == "POST":
         username = request.POST["username"]
@@ -24,13 +24,13 @@ def login_user(request):
     else:
         return render(request, 'authenticate/login.html', {})
 
-
+# logs users out
 def logout_user(request):
     logout(request)
     messages.success(request, ("You logged out!"))
     return redirect('index')
 
-
+# register user page
 def register_user(request):
     if request.method == "POST":
         form = RegisterUserForm(request.POST)
@@ -50,7 +50,7 @@ def register_user(request):
         'form': form,
     })
 
-
+# update user details page
 def details_update(request, id):
     user = User.objects.get(pk=id)
     if request.user.is_authenticated:
@@ -74,7 +74,7 @@ def details_update(request, id):
                          'Please log-in to make changes to your profile.')
         return redirect('login_user')
 
-
+# update user password page
 def password_update(request):
     if request.method == 'POST':
         form = PasswordUpdateForm(request.user, request.POST)

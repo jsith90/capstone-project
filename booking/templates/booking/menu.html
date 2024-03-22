@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<!-- bar menu page -->
 <main id="menu-main">
+  <!-- hero image -->
   <div id="img-box">
     <img id="menu-image" src="{% static 'images/menu-image.webp' %}" alt="A mountain range in the Baix Ebre">
   </div>
+  <!-- menu heading -->
     <section id="menu-heading">
         <h2 class="menu-title">OUR MENU</h2>
         <img class="menu-emoji" src="{% static 'images/menu.png' %}" alt="knife and fork and plate emoji">
@@ -13,6 +16,7 @@
     </section>
     <div id="menu-content">
     <hr>
+    <!-- menu contents -->
     <section class="menu-list">
         <h2 class="sub-heading">Catalan Tapas <img class="menu-emoji" src="{% static 'images/catalan-flag.png' %}" alt="catalan-flag"></h2>
         <h3 class="menu-item">Pa amb Tomàquet... 2.5</h3>

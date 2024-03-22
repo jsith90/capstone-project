@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<!-- user details update page -->
 <main id="user-update">
 	<h1>Update Your Profile</h1>
+	<!-- user details update form -->
 	<form action="{% url 'details_update' id=user.id %}" method=POST>
 		<hr>
 	{% csrf_token %}

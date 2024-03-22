@@ -3,6 +3,7 @@ from cloudinary.models import CloudinaryField
 from datetime import datetime
 from django.contrib.auth.models import User
 
+# created during set up 
 class CloudinaryTest(models.Model):
     title = models.CharField(max_length=100)
     image = CloudinaryField('image', default='placeholder')
@@ -24,7 +25,7 @@ TIME_CHOICES = (
     ("7 PM", "7 PM"),
     ("9 PM", "9 PM"),
 )
-
+# model for table bookings
 class Table_Booking(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True, blank=True)
     table = models.CharField(max_length=50, choices=TABLE_CHOICES, default="Table 1 (2 seats)")

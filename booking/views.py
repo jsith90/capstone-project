@@ -6,15 +6,15 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 
-
+# homepage
 def index(request):
     return render(request, "booking/index.html", {})
 
-
+# menu page
 def menu(request):
     return render(request, "booking/menu.html", {})
 
-
+# first page of table booking form (table and day of booking)
 def table_booking(request):
     user = request.user
     days_open = valid_day(22)
@@ -37,7 +37,7 @@ def table_booking(request):
         messages.success(request, "Please log-in to book a table.")
         return redirect('login_user')
 
-
+# second page of table booking form (time and special requirements)
 def table_booking_submit(request):
     user = request.user
     times = [
@@ -138,7 +138,7 @@ def table_booking_submit(request):
         messages.success(request, 'Please sign in to make a table booking.')
         return redirect('login_user')
 
-
+# user bookings page
 def user_panel(request):
     user = request.user
     if user.is_authenticated:
@@ -158,7 +158,7 @@ def user_panel(request):
         messages.success(request, 'Please sign in to view your bookings.')
         return redirect('login_user')
 
-
+# first page of the update booking form (table and day)
 def user_update(request, id):
     table_booking = Table_Booking.objects.get(pk=id)
     user_date_selected = table_booking.day
@@ -193,7 +193,7 @@ def user_update(request, id):
         messages.success(request, 'Please sign in to view your bookings.')
         return redirect('login_user')
 
-
+# second page of the update booking form (time and special requirements)
 def user_update_submit(request, id):
     user = request.user
     times = [
@@ -268,7 +268,7 @@ def user_update_submit(request, id):
                        "That's not your booking, so you can't do that.")
         return render(request, 'booking/index.html')
 
-
+# customer bookings page
 def staff_panel(request):
     user = request.user
     today = datetime.today()
@@ -285,7 +285,7 @@ def staff_panel(request):
         messages.error(request, "You are not authorised to view that page.")
         return redirect('index')
 
-
+# checks if a date is given and returns a day
 def day_to_day_open(x):
     if x is None:
         return None
@@ -294,7 +294,7 @@ def day_to_day_open(x):
         y = z.strftime('%A')
         return y
 
-
+# takes days and finds these as dates i.e. when the bar is open
 def valid_day(days):
     today = datetime.now()
     tomorrow = today + timedelta(days=1)
@@ -306,7 +306,7 @@ def valid_day(days):
             valid_days.append(x.strftime('%Y-%m-%d'))
     return valid_days
 
-
+# checks the day has less than the total possible bookings
 def is_day_valid(x):
     validate_days = []
     for j in x:
@@ -314,7 +314,7 @@ def is_day_valid(x):
             validate_days.append(j)
     return validate_days
 
-
+# checks availability and returns available times
 def check_time(times, day, table):
     bookings = Table_Booking.objects.filter(day=day)
     available_times = []
@@ -324,7 +324,7 @@ def check_time(times, day, table):
             available_times.append(time)
     return available_times
 
-
+# checks availability and returns available times for the update booking form  
 def check_edit_time(times, day, id):
     x = []
     table_booking = Table_Booking.objects.get(pk=id)
@@ -334,7 +334,7 @@ def check_edit_time(times, day, id):
             x.append(k)
     return x
 
-
+# deletes a booking
 def delete_booking(request, booking_id):
     table_booking = Table_Booking.objects.get(pk=booking_id)
     if request.user.is_authenticated:

@@ -1,11 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<!-- second page of the table booking update form -->
 <main class="update-booking">
     <h1 class="update-title">Edit Booking</h1>
+    <!-- form -->
     <div class="form-input">
         <form method="post" action="{% url 'user_update_submit' id %}" class="center-form">
             {% csrf_token %}
+            <!-- time selection -->
             <div class="selector">
                 <h3 class="table-title">Time:</h3>
                 <label for="update-select-time">
@@ -16,6 +19,7 @@
                     </select>
                 </label>
             </div>
+            <!-- special requirements section -->
             <div class="selector">
                 <h3 class="table-title">Special Requirements:</h3>
                 <label for="special-requirements">
