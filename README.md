@@ -6,7 +6,7 @@ The site is set up with the intention of providing users with the opportunity to
 
 Visitors to the site hoping to book a table can choose a date, time and table, and are able to inform the site owner of any special requirements they have for their booking. After making a booking, users can view, cancel or update them; users cannot choose a table that is already reserved.  
 
-This website is designed with the Baix Ebre in mind; the dishes and beverages on on its menu, the choice of colours, which were inspired by the terracotta and limestone prevalent in the rock formations and Renaissance buildings of the region’s towns and cities. Even the choice of font for titles and headings was chosen because of its similarity to one found on a series of cardboard recipes freely distributed at a local grocers in the region’s capital, Tortosa. The website includes a landing page and a menu page; users can register an account, which extends user access to the table booking system, where users can create, view, update and delete bookings.
+This website is designed with the Baix Ebre in mind; the dishes and beverages on its menu, the choice of colours, which were inspired by the terracotta and limestone prevalent in the rock formations and Renaissance buildings of the region’s towns and cities. Even the choice of font for titles and headings was chosen because of its similarity to one found on a series of cardboard recipes freely distributed at a local grocers in the region’s capital, Tortosa. The website includes a landing page and a menu page; users can register an account, which extends user access to the table booking system, where users can create, view, update and delete bookings.
 
 ![Landing Page](/documentation/responsive.png)
 
@@ -25,9 +25,11 @@ The site’s design was inspired by the region from which the restaurant’s nam
 - As a **user who uses a screen reader** I can **have meaningful alt text on images** so that **I can more easily navigate through the site**. 
 - As a **site owner** I want **my webpage to look good on all devices** so that users can **access it in different ways.**
 - As a **site owner** I can **provide users with necessary information about booking, updating and deleting a table** so that **confusion and issues about bookings are avoided**. 
-- As a **user** I can **read, update and delete bookings** so that **I do not have to directly contact the business via phone or email.**. 
+- As a **user** I can **read, update and delete bookings** so that **I do not have to directly contact the business via phone or email**. 
 - As a **new user** I can **see reviews, ratings and feedback from other customers** so that **I can determine the quality and reliability of the site owner**.
-- As a **user** I can **contact the business via the website in regards to dietary needs, caring needs and/or disability needs** so that **my needs are not overlooked and to ensure my experience is a positive one**.
+- As a **user** I can **contact the business via the website in regards to dietary needs, caring needs and/or accessability needs** so that **my needs are not overlooked and to ensure my experience is a positive one**.
+- As a **site owner** I can **directly upload images of the bar to a gallery page** so that **I can show the bar to customers**.
+- As a **site owner** I can **block tables, times and dates as needed** so that **customers cannot reserve a table**.
 
 ## Scope
 __Pages__
@@ -90,7 +92,7 @@ __Footer__
 
 - __Table Bookings Pages__
 
-  - The table booking form (which used John Abdsho Khosrowabadi’s Booking System For A Health Clinic as it’s foundation) keeps in place the two page booking process that Khosrowabadi uses, as it nicely breaks up and stages the booking process for the user. Rather than having a booking take place with one click, the two pages give the user a more friendly booking experience. On the first page registered users can choose a table and select a date from corresponding drop-down bars. Under the heading is a paragraph informing the user that bookings cannot be updated or deleted through the website on the day of the booking. The user then clicks a button labelled “Continue”, which takes them to the next page with a time drop-down selector and textarea for users to specify any additional special requirements they might have for their booking. The form’s content is positioned at the centre of both pages to draw the user’s eye to the priority content. The form works correctly, taking user bookings, displaying bookings to the user and superuser, and then removing that booking from the list of options displayed to the next user. 
+  - The table booking form (which used John Abdsho Khosrowabadi’s Booking System For A Health Clinic as it’s foundation) keeps in place the two page booking process that Khosrowabadi uses, as it nicely breaks up and stages the booking process for the user. Rather than having a booking take place with one click, the two pages give the user a more friendly booking experience. On the first page registered users can choose a table and select a date from corresponding drop-down bars. Under the heading is a paragraph informing the user that bookings cannot be updated or deleted through the website on the day the booking is scheduled for. The user then clicks a button labelled “Continue”, which takes them to the next page with a time drop-down selector and textarea for users to specify any additional special requirements they might have for their booking. The form’s content is positioned at the centre of both pages to draw the user’s eye to the priority content. The form works correctly, taking user bookings, displaying bookings to the user and superuser, and then removing that booking from the list of options displayed to the next user. 
 
 ![Table Booking Page 1 on Desktop](/documentation/bform1-desktop.png)
 ![Table Booking Page 2 on Desktop](/documentation/bform2-desktop.png)
@@ -137,7 +139,7 @@ __Footer__
 
 - __User Bookings Portal and Customer Bookings Page__
 
-  - The User Bookings portal displays user information at the top and bookings as cards on individual pages, with the option to cancel or update bookings (as long as the booking is not on the same day the user is accessing the page) displayed in the card. If these options are not displayed, bookings will instead display with a message informing the user how to contact the bar should they need to make any last minute changes to their booking. The Customer Bookings page for superusers displays all customer bookings in a table, with all the relevant information – including any special requirements. Both pages display correctly, with the delete and edit bookings buttons and update details and passowrd buttons all correctly displaying their corresponding modals when clicked.    
+  - The User Bookings portal displays user information at the top and bookings as cards on individual pages, with the option to cancel or update bookings (as long as the booking is not on the same day the user is accessing the page) displayed in the card. If these options are not displayed, bookings will instead display with a message informing the user how to contact the bar should they need to make any last minute changes to their booking. The Customer Bookings page for superusers displays all customer bookings in a table, with all the relevant information – including any special requirements. Both pages display correctly, with the delete and edit bookings buttons and update details and password buttons all correctly displaying their corresponding modals when clicked.    
 
 ![User Bookings Pages](/documentation/user-bookings.png)
 ![User Bookings Pages](/documentation/same-day-bookings.png)
@@ -452,7 +454,7 @@ Screen shots for tested features are available in the “High-Level Features” 
 
 - User stories 2, 3 and 4 are met through the website’s menu page which all users can easily access via a link in the navigation bar and a link on the homepage. All users can view all menu options. The site displays a range of images, colours and emojis which all attempt to convey to the user a general sense of what La Cucafera is. The menu details the bar’s allergies and dietary requirements policy and the booking form has an optional special requirements section, which the site owner can view in the customer bookings table. 
 
-5. As a **user** I can **contact the business via the website in regards to dietary needs, caring needs and/or disability needs** so that **my needs are not overlooked and to ensure my experience is a positive one**.
+5. As a **user** I can **contact the business via the website in regards to dietary needs, caring needs and/or accessability needs** so that **my needs are not overlooked and to ensure my experience is a positive one**.
 
 
 6. As a **frequent user** I can **log in to book a table** so that **I do not have to re-enter and/or resubmit personal details for every booking**. 
@@ -496,7 +498,6 @@ Screen shots for tested features are available in the “High-Level Features” 
 ### Future Fixes: Tested Bugs
 
 - The user stories in the future implementations section above attempt to address the current limitations of the site in its MVP form. 
-
 
   1. As a **site owner** I can **block tables, times and dates as needed** so that **customers cannot reserve a table**.
 
