@@ -8,4 +8,3 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('members/', include('members.urls'))
 ]
-
