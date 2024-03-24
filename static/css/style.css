@@ -862,6 +862,10 @@ footer {
   margin-left: 15px;
 }
 
+.allergies {
+  margin-right: 15px;
+}
+
 #user-update {
   margin-top: 110px;
   display: flex;
