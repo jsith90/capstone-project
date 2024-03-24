@@ -726,6 +726,10 @@ footer {
   font-size: 13px;
 }
 
+.edit-button > button {
+  margin-bottom: 15px;
+}
+
 #contact {
   font-size: 20px;
 }
