@@ -1,8 +1,3 @@
-
-# Project Title
-
-A brief description of what this project does and who it's for
-
 # La Cucafera | A Vegetarian Tapas Bar 
 
 This website has been designed for an imaginary tapas bar, located on a yet to be built street in the heart of Cardiff. They serve vegetarian dishes, as well as a range of beverages inspired by the culinary traditions of the Baix Ebre region in southern Catalonia. 
