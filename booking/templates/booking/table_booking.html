@@ -9,7 +9,7 @@
         <p>Please note: bookings, online booking updates or cancellations cannot be made on the same day your booking is scheduled for. Please call us if you want a booking for today: 029-20-111111</p>
         <!-- table selection -->
         <div class="form-input">
-            <form method="post" action="{% url 'table_booking' %}" class="center-form">
+            <form method="post" action="{% url 'table_booking' %}" class="center-form" aria-label="table booking form"></form>
                 {% csrf_token %}
                 <div class="selector">
                     <h3 class="table-title">Select Your Table:</h3>

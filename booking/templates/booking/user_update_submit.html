@@ -6,7 +6,7 @@
     <h1 class="update-title">Edit Booking</h1>
     <!-- form -->
     <div class="form-input">
-        <form method="post" action="{% url 'user_update_submit' id %}" class="center-form">
+        <form method="post" action="{% url 'user_update_submit' id %}" class="center-form" aria-label="booking update form">
             {% csrf_token %}
             <!-- time selection -->
             <div class="selector">

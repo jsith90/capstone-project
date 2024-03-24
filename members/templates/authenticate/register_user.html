@@ -7,11 +7,11 @@
 		<section id="register-main">
 			<h2 id="register-heading">Create a Profile</h2>
 			<hr class="line-break">
-			<form action="{% url 'register_user' %}" method=POST id="register-form">
+			<form action="{% url 'register_user' %}" method=POST id="register-form" aria-label="register user form">
 			{% csrf_token %}
 				{{ form.as_p }}
 				<hr>
-				<button type="submit" value="Submit" id="register-button">Submit</button>
+				<button type="submit" value="Submit" id="register-button" aria-label="click to register">Submit</button>
 			</form>
 		</section>
 	</main>	

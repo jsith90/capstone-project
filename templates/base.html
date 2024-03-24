@@ -28,11 +28,11 @@
     </div>
     <!-- users navigation modal -->
     <div class="members">
-      <button aria-label="Open Nav for Registered User Features" onclick="document.getElementById('nav-links').style.display='block'" class="active"><i class="active fa-regular fa-circle-user"></i></button>
-      <nav id="nav-links" class="modal" aria-label="Nav for Registered Users">
+      <button aria-label="Open Navigation Modal for Registered Users" onclick="document.getElementById('nav-links').style.display='block'" class="active"><i class="active fa-regular fa-circle-user"></i></button>
+      <nav id="nav-links" class="modal" aria-label="Navigation Modal for Registered Users">
           <ul id="members-menu">
             <!-- to close modal -->
-              <li class="close active"><button aria-label="Close Nav for Registered User Features" onclick="document.getElementById('nav-links').style.display='none'">X CLOSE</button></li>
+              <li class="close active"><button aria-label="Close Nav for Registered Users" onclick="document.getElementById('nav-links').style.display='none'">X CLOSE</button></li>
               <!-- if the user is logged in  -->
               {% if user.is_authenticated %}
               <li><a  aria-label="Table Booking Form Page" href="{% url 'table_booking' %}" class="active">Book a Table</a></li>
@@ -49,23 +49,23 @@
           </ul>
       </nav>
     </div>
-    <nav id="messageModal" class="modal" aria-label="Nav for Messages">
+    <div id="messageModal" class="modal">
 	    <div id="messages">
       		<!--messages modal-->
       		{% if messages %}
       		{% for message in messages %}
           	<div role="alert">
 		          <button aria-label="Close Message Modal" onclick="document.getElementById('messageModal').style.display='none'" class="close active">X CLOSE</button>
-              <h3  aria-label="site message" class="display-3">{{ message }}</h3>
+              <h3 class="display-3">{{ message }}</h3>
           	</div>
       		{% endfor %}
       		{% endif %}
     	</div>
-    </nav>
+    </div>
     <hr>
     <!-- logo and banner on navbar -->
     <div class="heading active">
-        <a href="{% url 'index' %}">
+        <a aria-label="Homepage" href="{% url 'index' %}">
             <h1>la cucafera</h1>
         </a>
     </div>

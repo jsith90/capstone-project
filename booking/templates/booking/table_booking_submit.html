@@ -8,7 +8,7 @@
         <h2 id="time-heading">Choose a Time:</h2>
         <div class="form-input">
             <!-- time selection -->
-            <form method="post" action="{% url 'table_booking_submit' %}" class="center-form">
+            <form method="post" action="{% url 'table_booking_submit' %}" class="center-form" aria-label="table booking form">
                 {% csrf_token %}
                 <div class="selector">
                     <h3 class="table-title">Available Times:</h3>
